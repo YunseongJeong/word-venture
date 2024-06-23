@@ -32,3 +32,5 @@ namespace TurnBattle
 다른 네임스페이스 참조하려면 using TurnBattle; 사용! 
 
 ```   
+2. Naming Convention
+   https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces#naming-enumerations 를 참조하여 이름을 정해봅시다.
