@@ -12,5 +12,23 @@
 3. 하나의 버전이 병합 후 안정적으로 완성이 되었다면, 메인 브랜치에 병합해주세요.
 
 
-## 이 브랜치는 메인 브랜치입니다.
+## 이렇게 코딩합시다.
 
+1. 네임스페이스 적용해서 본인 코드 짜기
+```C#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace TurnBattle
+{
+    public class TurnBattleSystem : MonoBehaviour
+    {
+      ...
+    }
+
+}
+
+다른 네임스페이스 참조하려면 using TurnBattle; 사용! 
+
+```   
