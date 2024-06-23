@@ -2,7 +2,7 @@
 
 앱티브 게임 팀 GIGDC 2024 출품작 워드의 모험(WordVenture)(가칭) 제작을 위한 저장소입니다.
 
-참조 : https://www.gigdc.or.kr//sub02.php#none 
+[대회 설명](https://www.gigdc.or.kr/sub01/sub02.php)
 
 
 ## 이렇게 사용하세요.
