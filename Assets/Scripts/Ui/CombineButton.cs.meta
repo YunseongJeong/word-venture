@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: eecd61e47d075e447b76368b25826020
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - CombineZone: {instanceID: 0}
+  - activateButton: {fileID: 4747065916933168269, guid: 731b7f54e1898c845a1b92912c5dcae8, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
