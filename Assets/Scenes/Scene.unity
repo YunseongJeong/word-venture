@@ -226,7 +226,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 0}
+  m_BackGroundColor: {r: 0.8037735, g: 0.8037735, b: 0.8037735, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -363,6 +363,7 @@ MonoBehaviour:
   cardSpawnPoint: {fileID: 918632301}
   CardLeft: {fileID: 2110247263}
   CardRight: {fileID: 851148232}
+  selectCard: {fileID: 0}
 --- !u!1 &851148231
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +389,7 @@ Transform:
   m_GameObject: {fileID: 851148231}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.13052624, w: 0.9914449}
-  m_LocalPosition: {x: 4.5, y: -3.5, z: 1.9263119}
+  m_LocalPosition: {x: 4.5, y: -4.7, z: 1.9263119}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -450,7 +451,7 @@ Transform:
   m_GameObject: {fileID: 2110247262}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
-  m_LocalPosition: {x: -4.5, y: -3.5, z: 1.9263119}
+  m_LocalPosition: {x: -4.5, y: -4.7, z: 1.9263119}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
