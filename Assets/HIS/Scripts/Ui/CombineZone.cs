@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CombineZone : MonoBehaviour
 {
     public List<GameObject> droppedCards = new List<GameObject>();
-    public GameObject activateButton;
+    public Button activateButton;
     public GameObject Shoot;
     public GameObject Heal;
     public GameObject Drop;
@@ -33,29 +34,8 @@ public class CombineZone : MonoBehaviour
 
             if (droppedCards.Count == 3)
             {
-                List<MagicType> types = GetDroppedCardTypes();
-                
-                if (types.Contains(MagicType.Shoot))
-                {
-                    Shoot.GetComponent<Shoot>().shoot();
-                }
-
-                if (types.Contains(MagicType.Heal))
-                {
-                    Heal.GetComponent<Heal>().heal();
-                }
-
-                if (types.Contains(MagicType.Drop))
-                {
-                    Drop.GetComponent<Drop>().drop();
-                }
-
-                if (types.Contains(MagicType.Summon))
-                {
-                    Summon.GetComponent<Summon>().summon();
-                }
-                
-                activateButton.SetActive(true);
+                activateButton.onClick.AddListener(OnButtonClick);
+                ClearDropZone();
             }
         }
     }
@@ -72,6 +52,31 @@ public class CombineZone : MonoBehaviour
             }
         }
         return types;
+    }
+
+    public void OnButtonClick()
+    {
+        List<MagicType> types = GetDroppedCardTypes();
+
+        if (types.Contains(MagicType.Shoot))
+        {
+            Shoot.GetComponent<Shoot>().shoot(types[1],types[2]);
+        }
+
+        if (types.Contains(MagicType.Heal))
+        {
+            Heal.GetComponent<Heal>().heal(types[1],types[2]);
+        }
+ 
+        if (types.Contains(MagicType.Drop))
+        {
+            Drop.GetComponent<Drop>().drop(types[1],types[2]);
+        }
+
+        if (types.Contains(MagicType.Summon))
+        {
+            Summon.GetComponent<Summon>().summon(types[1],types[2]);
+        }
     }
 
     public void ClearDropZone()

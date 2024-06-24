@@ -16,9 +16,9 @@ public class Shoot : MonoBehaviour
         
     }
 
-    public void shoot()
+    public void shoot(MagicType magicType1, MagicType magicType2)
     {
-
+        
     }
 
 }

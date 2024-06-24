@@ -16,7 +16,7 @@ public class Heal : MonoBehaviour
         
     }
 
-    public void heal()
+    public void heal(MagicType magicType1, MagicType magicType2)
     {
 
     }

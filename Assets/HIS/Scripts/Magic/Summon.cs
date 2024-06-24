@@ -16,7 +16,7 @@ public class Summon : MonoBehaviour
         
     }
 
-    public void summon()
+    public void summon(MagicType magicType1, MagicType magicType2)
     {
 
     }

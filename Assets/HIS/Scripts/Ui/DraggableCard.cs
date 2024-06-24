@@ -5,6 +5,7 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     private CanvasGroup canvasGroup;
     private Transform originalParent;
+    private GameObject dropZone;
 
     void Awake()
     {
@@ -25,6 +26,32 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
-        transform.SetParent(originalParent);
+
+        if (dropZone.CompareTag(tag)) 
+        {
+            transform.SetParent(dropZone.transform);  
+        }
+        else
+        {
+            transform.SetParent(originalParent);  
+        }
+
+        transform.localPosition = Vector3.zero; 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("DropZone"))  
+        {
+            dropZone = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("DropZone"))  
+        {
+            dropZone = null;
+        }
     }
 }

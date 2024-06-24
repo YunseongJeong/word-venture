@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,9 +25,13 @@ public class CombineButton : MonoBehaviour
 
     public void OnButtonClick()
     {
-        if (CombineZone != null)
+        if (!CombineZone.activeSelf)
         {
             CombineZone.SetActive(true);
+        }
+        else if (CombineZone.activeSelf)
+        {
+            CombineZone.SetActive(false);
         }
     }
 }
