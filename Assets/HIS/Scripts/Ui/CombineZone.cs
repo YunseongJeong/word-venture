@@ -14,7 +14,7 @@ public class CombineZone : MonoBehaviour
 
     void Start()
     {
-        
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +34,7 @@ public class CombineZone : MonoBehaviour
             if (droppedCards.Count == 3)
             {
                 List<MagicType> types = GetDroppedCardTypes();
+                
                 if (types.Contains(MagicType.Shoot))
                 {
                     Shoot.GetComponent<Shoot>().shoot();
@@ -53,6 +54,7 @@ public class CombineZone : MonoBehaviour
                 {
                     Summon.GetComponent<Summon>().summon();
                 }
+                
                 activateButton.SetActive(true);
             }
         }

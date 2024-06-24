@@ -22,7 +22,7 @@ public class CombineButton : MonoBehaviour
         
     }
 
-    void OnButtonClick()
+    public void OnButtonClick()
     {
         if (CombineZone != null)
         {
