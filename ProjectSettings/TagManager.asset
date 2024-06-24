@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Spell
+  - MagicTypes
+  - Target
   - Enemy
   layers:
   - Default
