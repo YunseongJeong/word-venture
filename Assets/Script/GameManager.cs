@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            battleSystem.StartBattle();
+            Debug.Log("Battle Start!");
         }
     }
 }
