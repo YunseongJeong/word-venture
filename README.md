@@ -1,2 +1,36 @@
 # WordVenture
-Apptive Game Team GIGDC 2024
+
+앱티브 게임 팀 GIGDC 2024 출품작 워드의 모험(WordVenture)(가칭) 제작을 위한 저장소입니다.
+
+[대회 설명](https://www.gigdc.or.kr/sub01/sub02.php)
+
+
+## 이렇게 사용하세요.
+
+1. 기능을 추가하려면 기능별 브랜치를 만들어서 작업해주세요.
+2. 작업이 끝났다면 develop 브랜치에 병합해주세요.
+3. 하나의 버전이 병합 후 안정적으로 완성이 되었다면, 메인 브랜치에 병합해주세요.
+
+
+## 이렇게 코딩합시다.
+
+1. 네임스페이스 적용해서 본인 코드 짜기
+```C#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace TurnBattle
+{
+    public class TurnBattleSystem : MonoBehaviour
+    {
+      ...
+    }
+
+}
+
+다른 네임스페이스 참조하려면 using TurnBattle; 사용! 
+
+```   
+2. Naming Convention
+   https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces#naming-enumerations 를 참조하여 이름을 정해봅시다.
