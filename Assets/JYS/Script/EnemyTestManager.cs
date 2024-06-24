@@ -9,15 +9,19 @@ namespace Enemy
 
         [SerializeField] GameObject player;
 
+        EnemyPoolController enemyPoolController;
+
         List<Enemy> enemies = new List<Enemy>();
         void Start()   
         {
             InitList(enemies);
+            enemyPoolController = gameObject.GetComponent<EnemyPoolController>();
             
         }
 
         private void InitList(List<Enemy> enemies)
         {
+            enemies.Clear();
             GameObject[] temp = GameObject.FindGameObjectsWithTag("Enemy");
             for(int i = 0; i < temp.Length; i++)
             {
@@ -38,6 +42,11 @@ namespace Enemy
            if (Input.GetKeyDown(KeyCode.Space))
             {
                 PlayTurn();
+            } else if (Input.GetKeyDown(KeyCode.Return))
+            {
+                enemyPoolController.SpawnObject(new Vector3(0, 0, 0), 0);
+                enemyPoolController.SpawnObject(new Vector3(4, 0, 0), 1);
+                InitList(enemies);
             }
         }
     }
