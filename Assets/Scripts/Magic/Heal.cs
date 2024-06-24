@@ -15,4 +15,9 @@ public class Heal : MonoBehaviour
     {
         
     }
+
+    public void heal()
+    {
+
+    }
 }

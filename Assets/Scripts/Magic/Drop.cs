@@ -15,4 +15,9 @@ public class Drop : MonoBehaviour
     {
         
     }
+
+    public void drop()
+    {
+
+    }
 }
