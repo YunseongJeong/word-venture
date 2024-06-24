@@ -5,6 +5,11 @@ using TMPro;
 
 namespace Enemy
 {
+    public enum ActionType
+    {
+        ATTACK=0, MOVE=1, BLOCK=2
+    }
+
     public class Enemy : MonoBehaviour
     {
         protected Animator animator;
@@ -23,10 +28,6 @@ namespace Enemy
 
         private Vector3 tempVector3 = new Vector3();
         float turnTime = 2;
-
-        const int ATTACK = 0;
-        const int MOVE = 1;
-        const int BLOCK = 2;
 
         public void InitEnemyData(EnemyData enemyData)
         {
@@ -66,16 +67,16 @@ namespace Enemy
                 float random = Random.Range(-1, 1);
                 if (random > 0)
                 {
-                    return BLOCK;
+                    return ActionType.BLOCK;
                 }
             }
 
             if (distanceToPlayer > attackRange)
             {
-                return MOVE;
+                return ActionType.MOVE;
             } else
             {
-                return ATTACK;
+                return ActionType.ATTACK;
             }
         }
 
@@ -93,22 +94,6 @@ namespace Enemy
 
         public void PlayTurnAction(float distanceToPlayer)
         {
-            switch (MakeActionDecision(distanceToPlayer))
-            {
-                case <= ATTACK:
-                    AttackAction();
-                    break;
-
-                case <= MOVE:
-                    MoveAction(distanceToPlayer);
-                    break;
-
-                case <= BLOCK:
-                    BlockAction();
-                    break;
-                default:
-                    break;
-            }
         }
 
 
