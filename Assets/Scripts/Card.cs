@@ -34,5 +34,15 @@ namespace Deck_Manage {
                 transform.localScale = prs.scale;
             }
         }
+
+        void OnMouseOver()
+        {
+            CardManager.Inst.CardMouseOver(this);
+        }
+
+        void OnMouseExit()
+        {
+            CardManager.Inst.CardMouseExit(this);
+        }
     }
 }
