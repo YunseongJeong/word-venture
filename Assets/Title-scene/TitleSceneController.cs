@@ -9,8 +9,4 @@ public class TitleSceneManager : MonoBehaviour
     {
         //SceneManager.LoadScene();
     }
-    private void LoadStoryScene()
-    {
-        SceneManager.LoadScene("StoryScene");
-    }
 }
