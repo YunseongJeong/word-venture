@@ -46,6 +46,7 @@ namespace Enemy
             {
                 enemyPoolController.SpawnObject(new Vector3(0, 0, 0), 0);
                 enemyPoolController.SpawnObject(new Vector3(4, 0, 0), 1);
+                enemyPoolController.SpawnObject(new Vector3(8, 0, 0), 2);
                 InitList(enemies);
             }
         }
