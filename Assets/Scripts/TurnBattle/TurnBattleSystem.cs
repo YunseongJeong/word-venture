@@ -1,3 +1,5 @@
+using Deck_Manage;
+using Enemy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,11 +30,13 @@ namespace TurnBattle
 
     public class PlayerTurn : Turn
     {
-        public override void OnStart()
+        public override void OnStart() // When Enemy Turn End...
         {
             Debug.Log("Player Turn Start!");
+            //Draw Cards.
+            TurnBattleSystem.Instance.cardManager.AddCard();
         }
-        public override void OnEnd()
+        public override void OnEnd() //When Player Hit End button...
         {
             Debug.Log("Player Turn End!");
         }
@@ -40,12 +44,14 @@ namespace TurnBattle
     }
     public class EnemyTurn : Turn
     {
-        public override void OnStart()
+        public override void OnStart() // When Player Turn End...
         {
             Debug.Log("Enemy Turn Start!");
+            TurnBattleSystem.Instance.enemyManager.PlayTurn();
+            OnEnd();
         }
 
-        public override void OnEnd()
+        public override void OnEnd() // When Enemy Action End...
         {
             Debug.Log("Enemy Turn End!");
         }
@@ -55,7 +61,15 @@ namespace TurnBattle
     public class TurnBattleSystem : MonoBehaviour
     {
         public static TurnBattleSystem Instance;
+
+        public static PlayerTurn PlayerTurn;
+        public static EnemyTurn EnemyTurn;
+
         Turn currentTurn;
+
+        [SerializeField] public CardManager cardManager;
+        [SerializeField] public EnemyTestManager enemyManager;
+
 
         private void Awake()
         {
@@ -67,15 +81,18 @@ namespace TurnBattle
             {
                 Destroy(this);
             }
+
+            PlayerTurn = new PlayerTurn();
+            EnemyTurn = new EnemyTurn();
         }
 
         private void Start()
         {
-            currentTurn = new PlayerTurn();
+            currentTurn = PlayerTurn;
             currentTurn.OnStart();
         }
 
-        public void SetTurn(Turn turn)
+        public void ChangeTurn(Turn turn)
         {
             currentTurn.OnEnd();
             currentTurn = turn;
