@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace Enemy
 {
     public class Enemy : MonoBehaviour
     {
         protected Animator animator;
+
+        protected TMP_Text hpText;
+        protected TMP_Text shieldText;
 
         protected int hp = 20;
         protected int maxHp = 20;
@@ -92,6 +96,8 @@ namespace Enemy
         protected virtual void Start()
         {
             animator = GetComponent<Animator>();
+            InitIndicators();
+
         }
 
         protected void FaceToDirection(int direction)
@@ -152,6 +158,22 @@ namespace Enemy
             
         }
 
+        private void InitIndicators()
+        {
+            TMP_Text[] textTemp = gameObject.GetComponentsInChildren<TMP_Text>();
+            if (textTemp[0].gameObject.name == "HpIndicator")
+            {
+                hpText = textTemp[0];
+                shieldText = textTemp[1];
+            }
+            else
+            {
+                hpText = textTemp[1];
+                shieldText = textTemp[0];
+            }
+            hpText.SetText(maxHp.ToString()) ;
+            shieldText.SetText(0.ToString());
+        }
     }
 }
 
