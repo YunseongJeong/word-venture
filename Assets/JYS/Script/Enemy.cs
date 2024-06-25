@@ -2,11 +2,73 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 namespace Enemy
 {
-    public class Enemy : MonoBehaviour
+
+    public abstract class EnemyAction
     {
+        protected Enemy enemy;
+        protected EnemyAction(Enemy enemy)
+        {
+            this.enemy = enemy;
+        }
+        public abstract void PlayAction(float distanceToPlayer);
+
+    }
+
+    public class EnemyAttackAction : EnemyAction
+    {
+
+        public EnemyAttackAction(Enemy enemy) : base(enemy) { }
+
+        public override void PlayAction(float distanceToPlayer)
+        {
+            enemy.Attack();
+        }
+    }
+
+    public class EnemyMoveAction : EnemyAction
+    {
+
+        public EnemyMoveAction(Enemy enemy) : base(enemy) { }
+        public override void PlayAction(float distanceToPlayer)
+        {
+
+            float tempMoveDistance;
+
+            if (distanceToPlayer > enemy.moveDistance + enemy.attackRange)
+            {
+                tempMoveDistance = enemy.moveDistance;
+            }
+            else
+            {
+                tempMoveDistance = distanceToPlayer - enemy.attackRange;
+            }
+
+            enemy.StartCoroutine(enemy.MoveDistance(tempMoveDistance));
+        }
+    }
+
+    public class EnemyBlockAction : EnemyAction
+    {
+        public EnemyBlockAction(Enemy enemy) : base(enemy) { }
+        public override void PlayAction(float distanceToPlayer)
+        {
+            enemy.shield += 5;
+            enemy.UpdateIndicator();
+        }
+    }
+
+    public enum ActionType
+    {
+        ATTACK = 0, MOVE = 1, BLOCK = 2
+    }
+
+
+    public class Enemy : MonoBehaviour
+    { 
         protected Animator animator;
 
         protected TMP_Text hpText;
@@ -15,19 +77,17 @@ namespace Enemy
         [SerializeField] protected int id;
         protected int hp = 20;
         protected int maxHp = 20;
-        protected float moveDistance = 5;
+        public float moveDistance = 5;
 
-        protected int shield = 0;
+        public int shield = 0;
 
-        protected float attackRange = 3;
+        public float attackRange = 3;
 
         private Vector3 tempVector3 = new Vector3();
         float turnTime = 2;
 
-        const int ATTACK = 0;
-        const int MOVE = 1;
-        const int BLOCK = 2;
-
+        [SerializeField] private List<EnemyAction> enemyActions = new List<EnemyAction>();
+        
         public void InitEnemyData(EnemyData enemyData)
         {
             id = enemyData.id;
@@ -36,83 +96,52 @@ namespace Enemy
             attackRange = enemyData.attackRange;
         }
 
-
-        void MoveAction(float distanceToPlayer)
+        private void InitEnemyActions()
         {
 
-            float tempMoveDistance;
-
-            if (distanceToPlayer > moveDistance + attackRange)
-            {
-                tempMoveDistance = moveDistance;
-            } else
-            {
-                tempMoveDistance = distanceToPlayer - attackRange;
-            }
-
-            StartCoroutine(MoveDistance(tempMoveDistance));
+            enemyActions.Add(new EnemyAttackAction(this));
+            enemyActions.Add(new EnemyMoveAction(this));
+            enemyActions.Add(new EnemyBlockAction(this));
         }
-
-        void AttackAction()
-        {
-            Attack();
-        }
+        
 
 
-        int MakeActionDecision(float distanceToPlayer)
+        private ActionType MakeActionDecision(float distanceToPlayer)
         {
             if (hp < maxHp / 2)
             {
                 float random = Random.Range(-1, 1);
                 if (random > 0)
                 {
-                    return BLOCK;
+                    return ActionType.BLOCK;
                 }
             }
 
             if (distanceToPlayer > attackRange)
             {
-                return MOVE;
+                return ActionType.MOVE;
             } else
             {
-                return ATTACK;
+                return ActionType.ATTACK;
             }
         }
 
-        void UpdateIndicator()
+        public void UpdateIndicator()
         {
             hpText.SetText(hp.ToString());
             shieldText.SetText(shield.ToString());
         }
 
-        void BlockAction()
-        {
-            shield += 5;
-            UpdateIndicator();
-        }
+        
 
         public void PlayTurnAction(float distanceToPlayer)
         {
-            switch (MakeActionDecision(distanceToPlayer))
-            {
-                case <= ATTACK:
-                    AttackAction();
-                    break;
-
-                case <= MOVE:
-                    MoveAction(distanceToPlayer);
-                    break;
-
-                case <= BLOCK:
-                    BlockAction();
-                    break;
-                default:
-                    break;
-            }
+            print((int)MakeActionDecision(distanceToPlayer));
+            enemyActions[(int) MakeActionDecision(distanceToPlayer)].PlayAction(distanceToPlayer);
         }
 
 
-        IEnumerator MoveDistance(float distance)
+        public IEnumerator MoveDistance(float distance)
         {
             float moveSpeed = moveDistance / turnTime;
             float movedDistance = 0;
@@ -130,7 +159,7 @@ namespace Enemy
         {
             animator = GetComponent<Animator>();
             InitIndicators();
-
+            InitEnemyActions();
         }
 
    
@@ -152,7 +181,7 @@ namespace Enemy
             transform.localScale = tempVector3;
         }
 
-        protected void Move(int direction, float moveStep) {
+        public void Move(int direction, float moveStep) {
             FaceToDirection(direction);
             tempVector3 = transform.position;
             tempVector3.x = tempVector3.x + moveStep * direction;
@@ -165,7 +194,7 @@ namespace Enemy
             animator.SetBool("isMoving", false);
         }
 
-        virtual protected void Attack()
+        virtual public void Attack()
         {
             animator.SetTrigger("Attack");
         }

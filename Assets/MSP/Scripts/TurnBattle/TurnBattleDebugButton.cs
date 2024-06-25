@@ -9,12 +9,12 @@ namespace TurnBattle
     {
         public void EndPlayerTurn()
         {
-            TurnBattleSystem.Instance.SetTurn(new EnemyTurn());
+            TurnBattleSystem.Instance.ChangeTurn(TurnBattleSystem.EnemyTurn);
         }
 
         public void EndEnemyTurn()
         {
-            TurnBattleSystem.Instance.SetTurn(new PlayerTurn());
+            TurnBattleSystem.Instance.ChangeTurn(TurnBattleSystem.PlayerTurn);
         }
     }
 

@@ -29,7 +29,7 @@ namespace Enemy
             }
         }
 
-        void PlayTurn()
+        public void PlayTurn()
         {
             foreach(Enemy enemy in enemies)
             {
