@@ -44,5 +44,17 @@ namespace Deck_Manage {
         {
             CardManager.Inst.CardMouseExit(this);
         }
+
+        void OnMouseDown() 
+        {
+            CardManager.Inst.CardMouseDown();
+            CardManager.Inst.selectCard = this;
+        }
+        
+        void OnMouseUp()
+        {
+            CardManager.Inst.CardMouseUp();
+            CardManager.Inst.selectCard = this;
+        }
     }
 }
