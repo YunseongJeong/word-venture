@@ -1,6 +1,6 @@
 # WordVenture
 
-앱티브 게임 팀 GIGDC 2024 출품작 워드의 모험(WordVenture)(가칭) 제작을 위한 저장소입니다.
+앱티브 게임 팀 GIGDC 2024 출품작 워드의 모험(WordVenture)(가칭) 제작을 위한 저장소입니다. 여기는 Main!
 
 [대회 설명](https://www.gigdc.or.kr/sub01/sub02.php)
 
@@ -32,5 +32,6 @@ namespace TurnBattle
 다른 네임스페이스 참조하려면 using TurnBattle; 사용! 
 
 ```   
-2. Naming Convention
-   https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces#naming-enumerations 를 참조하여 이름을 정해봅시다.
+2. [C# Naming Convention](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces#naming-enumerations) 를 참조하여 이름을 정해봅시다.
+
+3. [UML Diagram](https://velog.io/@jungmyeong96/UML-다이어그램-작성법) 을 참조하여 본인이 작성한 코드를 정리해봅시다. 협업할 때 이해가 잘 되고 피드백도 수월해질 것 입니다.
