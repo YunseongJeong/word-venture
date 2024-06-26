@@ -4,7 +4,10 @@ using System.Numerics;
 using JetBrains.Annotations;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
+using Random = UnityEngine.Random;
 using Quaternion = UnityEngine.Quaternion;
+using System;
+using Unity.VisualScripting;
 
 namespace Deck_Manage {
     public class CardManager : MonoBehaviour
@@ -18,8 +21,17 @@ namespace Deck_Manage {
         [SerializeField] Transform cardSpawnPoint;
         [SerializeField] Transform CardLeft;
         [SerializeField] Transform CardRight;
+        [SerializeField] GameObject PushArea1;
+        [SerializeField] GameObject PushArea2;
+        [SerializeField] GameObject PushArea3;
 
         List<Word> wordBuffer;
+        public Card selectCard;
+        bool isMyCardDrag;
+        bool onCardArea;
+        bool onPushArea1;
+        bool onPushArea2;
+        bool onPushArea3;
 
         public Word PopWord()
         {
@@ -57,8 +69,18 @@ namespace Deck_Manage {
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && !isMyCardDrag)
                 AddCard();
+
+            DetectCardArea();
+            if (isMyCardDrag)
+            {
+                // Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                // mousePosition = new Vector3(mousePosition.x, mousePosition.y, selectCard.transform.position.z);
+                // selectCard.transform.position = mousePosition;
+                DragCard();
+            }
+            
         }
 
         public void AddCard()
@@ -85,7 +107,7 @@ namespace Deck_Manage {
         void CardAlignment()
         {
             List<PRS> originCardPRSs = new List<PRS>();
-            originCardPRSs = RoundAlignment(CardLeft, CardRight, myCards.Count, 0.5f, new Vector3(1.896733f, 2.1f, 1));
+            originCardPRSs = RoundAlignment(CardLeft, CardRight, myCards.Count, 0.5f, new Vector3(1.896733f, 2.1f, 1) * 0.4f);
 
             var targetCards = myCards;
 
@@ -126,20 +148,86 @@ namespace Deck_Manage {
 
         public void CardMouseOver(Card card)
         {
-            EnlargeCard(true, card);
+            if(!onPushArea1 && !onPushArea2 && !onPushArea3)
+            {
+                EnlargeCard(true, card);
+            }
         }
 
         public void CardMouseExit(Card card)
         {
-            EnlargeCard(false, card);
+            if(!onPushArea1 && !onPushArea2 && !onPushArea3)
+            {
+                EnlargeCard(false, card);
+            }
+        }
+
+        public void CardMouseDown()
+        {
+            isMyCardDrag = true;
+        }
+
+        public void CardMouseUp()
+        {
+            isMyCardDrag = false;
+            if (onPushArea1)
+            {
+                selectCard.MoveTransform(new PRS(PushArea1.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+
+            if (onPushArea2)
+            {
+                selectCard.MoveTransform(new PRS(PushArea2.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+
+            if (onPushArea3)
+            {
+                selectCard.MoveTransform(new PRS(PushArea3.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+        }
+
+        void DragCard()
+        {
+            if (!onCardArea && !onPushArea1 && !onPushArea2 && !onPushArea3)
+            {
+                selectCard.MoveTransform(new PRS(Util.MousePos, Util.QI, selectCard.originPRS.scale), false);
+            }
+            
+            else if (onPushArea1)
+            {
+                selectCard.MoveTransform(new PRS(PushArea1.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+
+            else if (onPushArea2)
+            {
+                selectCard.MoveTransform(new PRS(PushArea2.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+
+            else if (onPushArea3)
+            {
+                selectCard.MoveTransform(new PRS(PushArea3.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+        }
+
+        void DetectCardArea()
+        {
+            RaycastHit2D[] hits = Physics2D.RaycastAll(Util.MousePos, Vector3.forward);
+            int Cardlayer = LayerMask.NameToLayer("CardArea");
+            int Pushlayer1 = LayerMask.NameToLayer("PushArea1");
+            int Pushlayer2 = LayerMask.NameToLayer("PushArea2");
+            int Pushlayer3 = LayerMask.NameToLayer("PushArea3");
+            onCardArea = Array.Exists(hits, x => x.collider.gameObject.layer == Cardlayer);
+            onPushArea1 = Array.Exists(hits, x => x.collider.gameObject.layer == Pushlayer1);
+            onPushArea2 = Array.Exists(hits, x => x.collider.gameObject.layer == Pushlayer2);
+            onPushArea3 = Array.Exists(hits, x => x.collider.gameObject.layer == Pushlayer3);
         }
 
         void EnlargeCard(bool isEnlarge, Card card)
         {
             if (isEnlarge)
             {
-                Vector3 enlargePos = new Vector3(card.originPRS.pos.x, -1f, -10f);
-                card.MoveTransform(new PRS(enlargePos, Util.QI, new Vector3(1.896733f, 2.910432f, 1) * 1.2f), false);
+                Vector3 enlargePos = new Vector3(card.originPRS.pos.x, -3f, -10f);
+                card.MoveTransform(new PRS(enlargePos, Util.QI, new Vector3(1.896733f, 2.1f, 1) * 0.6f), false);
             }
             else
                 card.MoveTransform(card.originPRS, false);
