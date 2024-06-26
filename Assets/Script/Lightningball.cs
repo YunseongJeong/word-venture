@@ -2,32 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lightningball : MonoBehaviour
+namespace BattleSystem
 {
-    public float speed = 12f;
-    public int damage = 25;
-    public float lifetime = 1.5f; 
-
-    private Rigidbody2D rb;
-
-    void Start()
+    public class Lightningball : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody2D>();
+        public float speed = 12f;
+        public int damage = 25;
+        public float lifetime = 1.5f;
 
-        Destroy(gameObject, lifetime);
+        private Rigidbody2D rb;
 
-        Vector2 shootDirection = -transform.right;
-        rb.velocity = shootDirection * speed;
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Enemy enemy = other.GetComponent<Enemy>();
-        if (enemy != null)
+        void Start()
         {
-            enemy.TakeDamage(damage);
+            rb = GetComponent<Rigidbody2D>();
 
-            Destroy(gameObject);
+            Destroy(gameObject, lifetime);
+
+            Vector2 shootDirection = -transform.right;
+            rb.velocity = shootDirection * speed;
+        }
+
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+
+                Destroy(gameObject);
+            }
         }
     }
 }
+
+

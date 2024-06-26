@@ -2,29 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace BattleSystem
 {
-    public int maxHealth = 100;
-    private int currentHealth;
-
-    void Start()
+    public class Enemy : MonoBehaviour
     {
-        currentHealth = maxHealth;
-    }
+        public int maxHealth = 100;
+        private int currentHealth;
 
-    public void TakeDamage(int amount)
-    {
-        currentHealth -= amount;
-        Debug.Log("Enemy took " + amount + " damage. Current health: " + currentHealth);
-        if (currentHealth <= 0)
+        void Start()
         {
-            Die();
+            currentHealth = maxHealth;
+        }
+
+        public void TakeDamage(int amount)
+        {
+            currentHealth -= amount;
+            Debug.Log("Enemy took " + amount + " damage. Current health: " + currentHealth);
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+
+        private void Die()
+        {
+            Debug.Log("Enemy Died");
+            Destroy(gameObject);
         }
     }
 
-    private void Die()
-    {
-        Debug.Log("Enemy Died");
-        Destroy(gameObject);
-    }
 }
+

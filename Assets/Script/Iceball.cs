@@ -2,32 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Iceball : MonoBehaviour
+namespace BattleSystem
 {
-    public float speed = 8f;
-    public int damage = 15;
-    public float lifetime = 3f;
-
-    private Rigidbody2D rb;
-
-    void Start()
+    public class Iceball : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody2D>();
+        public float speed = 8f;
+        public int damage = 15;
+        public float lifetime = 3f;
 
-        Destroy(gameObject, lifetime);
+        private Rigidbody2D rb;
 
-        Vector2 shootDirection = -transform.right;
-        rb.velocity = shootDirection * speed;
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Enemy enemy = other.GetComponent<Enemy>();
-        if (enemy != null)
+        void Start()
         {
-            enemy.TakeDamage(damage);
+            rb = GetComponent<Rigidbody2D>();
 
-            Destroy(gameObject);
+            Destroy(gameObject, lifetime);
+
+            Vector2 shootDirection = -transform.right;
+            rb.velocity = shootDirection * speed;
+        }
+
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+
+                Destroy(gameObject);
+            }
         }
     }
 }

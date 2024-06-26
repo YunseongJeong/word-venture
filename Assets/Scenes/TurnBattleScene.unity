@@ -306,6 +306,7 @@ MonoBehaviour:
   cardSpawnPoint: {fileID: 801747277}
   CardLeft: {fileID: 879934599}
   CardRight: {fileID: 789372286}
+  selectCard: {fileID: 0}
 --- !u!1 &439851352
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +780,7 @@ Transform:
   m_GameObject: {fileID: 789372285}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.13052624, w: 0.9914449}
-  m_LocalPosition: {x: 4.5, y: -3.5, z: 1.9263119}
+  m_LocalPosition: {x: 4.5, y: -5.14, z: 1.9263119}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -909,7 +910,7 @@ Transform:
   m_GameObject: {fileID: 879934598}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.13052616, w: 0.9914449}
-  m_LocalPosition: {x: -4.5, y: -3.5, z: 1.9263119}
+  m_LocalPosition: {x: -4.5, y: -5.14, z: 1.9263119}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
