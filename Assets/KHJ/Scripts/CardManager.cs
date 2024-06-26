@@ -21,13 +21,17 @@ namespace Deck_Manage {
         [SerializeField] Transform cardSpawnPoint;
         [SerializeField] Transform CardLeft;
         [SerializeField] Transform CardRight;
-        [SerializeField] GameObject PushArea;
+        [SerializeField] GameObject PushArea1;
+        [SerializeField] GameObject PushArea2;
+        [SerializeField] GameObject PushArea3;
 
         List<Word> wordBuffer;
         public Card selectCard;
         bool isMyCardDrag;
         bool onCardArea;
-        bool onPushArea;
+        bool onPushArea1;
+        bool onPushArea2;
+        bool onPushArea3;
 
         public Word PopWord()
         {
@@ -144,7 +148,7 @@ namespace Deck_Manage {
 
         public void CardMouseOver(Card card)
         {
-            if(!onPushArea)
+            if(!onPushArea1 && !onPushArea2 && !onPushArea3)
             {
                 EnlargeCard(true, card);
             }
@@ -152,10 +156,10 @@ namespace Deck_Manage {
 
         public void CardMouseExit(Card card)
         {
-            if(!onPushArea)
+            if(!onPushArea1 && !onPushArea2 && !onPushArea3)
             {
                 EnlargeCard(false, card);
-            }   
+            }
         }
 
         public void CardMouseDown()
@@ -166,22 +170,42 @@ namespace Deck_Manage {
         public void CardMouseUp()
         {
             isMyCardDrag = false;
-            if(onPushArea)
+            if (onPushArea1)
             {
-                selectCard.MoveTransform(new PRS(PushArea.transform.position, Util.QI, selectCard.originPRS.scale), false);
+                selectCard.MoveTransform(new PRS(PushArea1.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+
+            if (onPushArea2)
+            {
+                selectCard.MoveTransform(new PRS(PushArea2.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+
+            if (onPushArea3)
+            {
+                selectCard.MoveTransform(new PRS(PushArea3.transform.position, Util.QI, selectCard.originPRS.scale), false);
             }
         }
 
         void DragCard()
         {
-            if (!onCardArea && !onPushArea)
+            if (!onCardArea && !onPushArea1 && !onPushArea2 && !onPushArea3)
             {
                 selectCard.MoveTransform(new PRS(Util.MousePos, Util.QI, selectCard.originPRS.scale), false);
             }
             
-            else if (onPushArea)
+            else if (onPushArea1)
             {
-                selectCard.MoveTransform(new PRS(PushArea.transform.position, Util.QI, selectCard.originPRS.scale), false);
+                selectCard.MoveTransform(new PRS(PushArea1.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+
+            else if (onPushArea2)
+            {
+                selectCard.MoveTransform(new PRS(PushArea2.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+
+            else if (onPushArea3)
+            {
+                selectCard.MoveTransform(new PRS(PushArea3.transform.position, Util.QI, selectCard.originPRS.scale), false);
             }
         }
 
@@ -189,9 +213,13 @@ namespace Deck_Manage {
         {
             RaycastHit2D[] hits = Physics2D.RaycastAll(Util.MousePos, Vector3.forward);
             int Cardlayer = LayerMask.NameToLayer("CardArea");
-            int Pushlayer = LayerMask.NameToLayer("PushArea");
+            int Pushlayer1 = LayerMask.NameToLayer("PushArea1");
+            int Pushlayer2 = LayerMask.NameToLayer("PushArea2");
+            int Pushlayer3 = LayerMask.NameToLayer("PushArea3");
             onCardArea = Array.Exists(hits, x => x.collider.gameObject.layer == Cardlayer);
-            onPushArea = Array.Exists(hits, x => x.collider.gameObject.layer == Pushlayer);
+            onPushArea1 = Array.Exists(hits, x => x.collider.gameObject.layer == Pushlayer1);
+            onPushArea2 = Array.Exists(hits, x => x.collider.gameObject.layer == Pushlayer2);
+            onPushArea3 = Array.Exists(hits, x => x.collider.gameObject.layer == Pushlayer3);
         }
 
         void EnlargeCard(bool isEnlarge, Card card)
