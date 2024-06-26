@@ -4,7 +4,10 @@ using System.Numerics;
 using JetBrains.Annotations;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
+using Random = UnityEngine.Random;
 using Quaternion = UnityEngine.Quaternion;
+using System;
+using Unity.VisualScripting;
 
 namespace Deck_Manage {
     public class CardManager : MonoBehaviour
@@ -18,10 +21,13 @@ namespace Deck_Manage {
         [SerializeField] Transform cardSpawnPoint;
         [SerializeField] Transform CardLeft;
         [SerializeField] Transform CardRight;
+        [SerializeField] GameObject PushArea;
 
         List<Word> wordBuffer;
         public Card selectCard;
         bool isMyCardDrag;
+        bool onCardArea;
+        bool onPushArea;
 
         public Word PopWord()
         {
@@ -61,12 +67,16 @@ namespace Deck_Manage {
         {
             if (Input.GetKeyDown(KeyCode.Space) && !isMyCardDrag)
                 AddCard();
+
+            DetectCardArea();
             if (isMyCardDrag)
             {
-                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                mousePosition = new Vector3(mousePosition.x, mousePosition.y, selectCard.transform.position.z);
-                selectCard.transform.position = mousePosition;
+                // Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                // mousePosition = new Vector3(mousePosition.x, mousePosition.y, selectCard.transform.position.z);
+                // selectCard.transform.position = mousePosition;
+                DragCard();
             }
+            
         }
 
         void AddCard()
@@ -134,12 +144,18 @@ namespace Deck_Manage {
 
         public void CardMouseOver(Card card)
         {
-            EnlargeCard(true, card);
+            if(!onPushArea)
+            {
+                EnlargeCard(true, card);
+            }
         }
 
         public void CardMouseExit(Card card)
         {
-            EnlargeCard(false, card);
+            if(!onPushArea)
+            {
+                EnlargeCard(false, card);
+            }   
         }
 
         public void CardMouseDown()
@@ -150,6 +166,32 @@ namespace Deck_Manage {
         public void CardMouseUp()
         {
             isMyCardDrag = false;
+            if(onPushArea)
+            {
+                selectCard.MoveTransform(new PRS(PushArea.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+        }
+
+        void DragCard()
+        {
+            if (!onCardArea && !onPushArea)
+            {
+                selectCard.MoveTransform(new PRS(Util.MousePos, Util.QI, selectCard.originPRS.scale), false);
+            }
+            
+            else if (onPushArea)
+            {
+                selectCard.MoveTransform(new PRS(PushArea.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+        }
+
+        void DetectCardArea()
+        {
+            RaycastHit2D[] hits = Physics2D.RaycastAll(Util.MousePos, Vector3.forward);
+            int Cardlayer = LayerMask.NameToLayer("CardArea");
+            int Pushlayer = LayerMask.NameToLayer("PushArea");
+            onCardArea = Array.Exists(hits, x => x.collider.gameObject.layer == Cardlayer);
+            onPushArea = Array.Exists(hits, x => x.collider.gameObject.layer == Pushlayer);
         }
 
         void EnlargeCard(bool isEnlarge, Card card)

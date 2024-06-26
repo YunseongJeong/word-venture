@@ -56,6 +56,7 @@ namespace Deck_Manage {
         void OnMouseUp()
         {
             CardManager.Inst.CardMouseUp();
+            CardManager.Inst.selectCard = this;
         }
     }
 }
