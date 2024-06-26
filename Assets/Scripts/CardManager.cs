@@ -20,8 +20,6 @@ namespace Deck_Manage {
         [SerializeField] Transform CardRight;
 
         List<Word> wordBuffer;
-        public Card selectCard;
-        bool isMyCardDrag;
 
         public Word PopWord()
         {
@@ -59,14 +57,8 @@ namespace Deck_Manage {
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && !isMyCardDrag)
+            if (Input.GetKeyDown(KeyCode.Space))
                 AddCard();
-            if (isMyCardDrag)
-            {
-                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                mousePosition = new Vector3(mousePosition.x, mousePosition.y, selectCard.transform.position.z);
-                selectCard.transform.position = mousePosition;
-            }
         }
 
         public void AddCard()
@@ -93,7 +85,7 @@ namespace Deck_Manage {
         void CardAlignment()
         {
             List<PRS> originCardPRSs = new List<PRS>();
-            originCardPRSs = RoundAlignment(CardLeft, CardRight, myCards.Count, 0.5f, new Vector3(1.896733f, 2.1f, 1) * 0.4f);
+            originCardPRSs = RoundAlignment(CardLeft, CardRight, myCards.Count, 0.5f, new Vector3(1.896733f, 2.1f, 1));
 
             var targetCards = myCards;
 
@@ -142,22 +134,12 @@ namespace Deck_Manage {
             EnlargeCard(false, card);
         }
 
-        public void CardMouseDown()
-        {
-            isMyCardDrag = true;
-        }
-
-        public void CardMouseUp()
-        {
-            isMyCardDrag = false;
-        }
-
         void EnlargeCard(bool isEnlarge, Card card)
         {
             if (isEnlarge)
             {
-                Vector3 enlargePos = new Vector3(card.originPRS.pos.x, -3f, -10f);
-                card.MoveTransform(new PRS(enlargePos, Util.QI, new Vector3(1.896733f, 2.1f, 1) * 0.6f), false);
+                Vector3 enlargePos = new Vector3(card.originPRS.pos.x, -1f, -10f);
+                card.MoveTransform(new PRS(enlargePos, Util.QI, new Vector3(1.896733f, 2.910432f, 1) * 1.2f), false);
             }
             else
                 card.MoveTransform(card.originPRS, false);

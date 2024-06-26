@@ -4,8 +4,6 @@ using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
-using System.Numerics;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Deck_Manage {
     public class Card : MonoBehaviour
@@ -45,17 +43,6 @@ namespace Deck_Manage {
         void OnMouseExit()
         {
             CardManager.Inst.CardMouseExit(this);
-        }
-
-        void OnMouseDown() 
-        {
-            CardManager.Inst.CardMouseDown();
-            CardManager.Inst.selectCard = this;
-        }
-        
-        void OnMouseUp()
-        {
-            CardManager.Inst.CardMouseUp();
         }
     }
 }
