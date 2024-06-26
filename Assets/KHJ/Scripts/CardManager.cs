@@ -83,7 +83,7 @@ namespace Deck_Manage {
             
         }
 
-        void AddCard()
+        public void AddCard()
         {
             var cardObject = Instantiate(cardPrefab, cardSpawnPoint.position, Quaternion.identity);
             var card = cardObject.GetComponent<Card>();

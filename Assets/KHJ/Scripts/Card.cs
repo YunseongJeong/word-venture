@@ -4,8 +4,6 @@ using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
-using System.Numerics;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Deck_Manage {
     public class Card : MonoBehaviour
