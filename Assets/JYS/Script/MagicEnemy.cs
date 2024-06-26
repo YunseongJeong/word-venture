@@ -11,13 +11,12 @@ namespace Enemy
         void Start()
         {
             base.Start();
-            attackRange = 20;
         }
 
         public override void Attack()
         {
             base.Attack();
-            Instantiate(fireShoot, transform.position,Quaternion.identity);
+            Instantiate(fireShoot, transform.position,Quaternion.identity); 
         }
 
     }

@@ -75,8 +75,8 @@ namespace Enemy
         protected TMP_Text shieldText;
 
         [SerializeField] protected int id;
-        protected int hp = 20;
-        protected int maxHp = 20;
+        protected int hp = 1;
+        protected int maxHp = 1;
         public float moveDistance = 5;
 
         public int shield = 0;
@@ -92,8 +92,11 @@ namespace Enemy
         {
             id = enemyData.id;
             maxHp = enemyData.maxHp;
+            hp = maxHp;
             moveDistance = enemyData.moveDistance;
             attackRange = enemyData.attackRange;
+            print(hp);
+            UpdateIndicator();
         }
 
         private void InitEnemyActions()
@@ -155,10 +158,14 @@ namespace Enemy
             StopMove();
         }
 
+        private void Awake()
+        {
+            InitIndicators();
+        }
+
         protected virtual void Start()
         {
             animator = GetComponent<Animator>();
-            InitIndicators();
             InitEnemyActions();
         }
 
