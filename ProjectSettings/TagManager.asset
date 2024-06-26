@@ -8,6 +8,7 @@ TagManager:
   - MagicTypes
   - Target
   - Enemy
+  - MagicType
   layers:
   - Default
   - TransparentFX
