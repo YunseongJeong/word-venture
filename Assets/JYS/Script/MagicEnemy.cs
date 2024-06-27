@@ -13,9 +13,9 @@ namespace Enemy
             base.Start();
         }
 
-        public override void Attack()
+        public override void Attack(float distanceToPlayer)
         {
-            base.Attack();
+            base.Attack(distanceToPlayer);
             Instantiate(fireShoot, transform.position,Quaternion.identity); 
         }
 

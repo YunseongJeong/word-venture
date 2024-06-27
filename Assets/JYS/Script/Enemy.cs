@@ -25,7 +25,7 @@ namespace Enemy
 
         public override void PlayAction(float distanceToPlayer)
         {
-            enemy.Attack();
+            enemy.Attack(distanceToPlayer);
         }
     }
 
@@ -77,6 +77,8 @@ namespace Enemy
         [SerializeField] protected int id;
         protected int hp = 1;
         protected int maxHp = 1;
+        protected int damage;
+
         public float moveDistance = 5;
 
         public int shield = 0;
@@ -95,7 +97,7 @@ namespace Enemy
             hp = maxHp;
             moveDistance = enemyData.moveDistance;
             attackRange = enemyData.attackRange;
-            print(hp);
+            damage = enemyData.damage;
             UpdateIndicator();
         }
 
@@ -139,7 +141,6 @@ namespace Enemy
 
         public void PlayTurnAction(float distanceToPlayer)
         {
-            print((int)MakeActionDecision(distanceToPlayer));
             enemyActions[(int) MakeActionDecision(distanceToPlayer)].PlayAction(distanceToPlayer);
         }
 
@@ -201,7 +202,7 @@ namespace Enemy
             animator.SetBool("isMoving", false);
         }
 
-        virtual public void Attack()
+        virtual public void Attack(float distanceToPlayer)
         {
             animator.SetTrigger("Attack");
         }
