@@ -39,7 +39,7 @@ namespace Enemy
 
         void Update()
         {
-           if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 PlayTurn();
             } else if (Input.GetKeyDown(KeyCode.Return))
@@ -48,6 +48,12 @@ namespace Enemy
                 enemyPoolController.SpawnObject(new Vector3(4, -3.5f, 0), 1);
                 enemyPoolController.SpawnObject(new Vector3(8, -3.5f, 0), 2);
                 InitList(enemies);
+            } else if (Input.GetKeyDown(KeyCode.D))
+            {
+                foreach (Enemy enemy in enemies)
+                {
+                    enemy.TakeHit(1);
+                }
             }
         }
     }
