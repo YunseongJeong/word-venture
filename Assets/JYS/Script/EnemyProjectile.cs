@@ -8,6 +8,12 @@ namespace Enemy
     {
         float speed = 10;
         Vector3 moveVector;
+        int damage;
+
+        public void InitProjectileDamage(int damage)
+        {
+            this.damage = damage;
+        }
 
         void Start()
         {
@@ -28,7 +34,7 @@ namespace Enemy
         {
             if (collision.CompareTag("Player")) {
                 print(collision.gameObject.tag);
-                // Player.TakeHit(damage)
+                PlayerTestForEnemy.Player().TakeHit(damage);
                 Destroy(gameObject);
             }
         }
