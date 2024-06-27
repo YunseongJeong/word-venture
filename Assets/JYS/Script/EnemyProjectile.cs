@@ -28,6 +28,7 @@ namespace Enemy
         {
             if (collision.CompareTag("Player")) {
                 print(collision.gameObject.tag);
+                // Player.TakeHit(damage)
                 Destroy(gameObject);
             }
         }
