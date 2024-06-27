@@ -16,7 +16,8 @@ namespace Enemy
         public override void Attack(float distanceToPlayer)
         {
             base.Attack(distanceToPlayer);
-            Instantiate(fireShoot, transform.position,Quaternion.identity); 
+            GameObject projectile = Instantiate(fireShoot, transform.position,Quaternion.identity);
+            projectile.GetComponent<EnemyProjectile>().InitProjectileDamage(damage);
         }
 
     }
