@@ -113,20 +113,20 @@ public class CombineZone : MonoBehaviour
         if (card.CompareTag("Spell") && spellCards.Count < 1)
         {
             spellCards.Add(card);
-            card.transform.SetParent(transform);
-            card.SetActive(false);
+            //card.transform.SetParent(transform);
+            //card.SetActive(false);
         }
         else if (card.CompareTag("MagicType") && magicTypeCards.Count < 1)
         {
             magicTypeCards.Add(card);
-            card.transform.SetParent(transform);
-            card.SetActive(false);
+            //card.transform.SetParent(transform);
+            //card.SetActive(false);
         }
         else if (card.CompareTag("Target") && targetCards.Count < 1)
         {
             targetCards.Add(card);
-            card.transform.SetParent(transform);
-            card.SetActive(false);
+            //card.transform.SetParent(transform);
+            //card.SetActive(false);
         }
 
         if (spellCards.Count == 1 && magicTypeCards.Count == 1 && targetCards.Count == 1)
@@ -141,23 +141,26 @@ public class CombineZone : MonoBehaviour
     {
         if (spellCards.Count == 1 && magicTypeCards.Count == 1 && targetCards.Count == 1)
         {
-            MagicType spellType = spellCards[0].GetComponent<Card>().cardType;
-            MagicType magicType = magicTypeCards[0].GetComponent<Card>().cardType;
-            MagicType targetType = targetCards[0].GetComponent<Card>().cardType;
+            Deck_Manage.MagicType spellType = spellCards[0].GetComponent<Deck_Manage.Card>().cardType;
+            Deck_Manage.MagicType magicType = magicTypeCards[0].GetComponent<Deck_Manage.Card>().cardType;
+            Deck_Manage.MagicType targetType = targetCards[0].GetComponent<Deck_Manage.Card>().cardType;
 
-            if (spellType == MagicType.Shoot)
+
+
+            if (spellType == Deck_Manage.MagicType.Shoot)
             {
+                
                 Shoot.GetComponent<Shoot>().shoot(magicType, targetType);
             }
-            else if (spellType == MagicType.Heal)
+            else if (spellType == Deck_Manage.MagicType.Heal)
             {
                 Heal.GetComponent<Heal>().heal(magicType, targetType);
             }
-            else if (spellType == MagicType.Drop)
+            else if (spellType == Deck_Manage.MagicType.Drop)
             {
                 Drop.GetComponent<Drop>().drop(magicType, targetType);
             }
-            else if (spellType == MagicType.Summon)
+            else if (spellType == Deck_Manage.MagicType.Summon)
             {
                 Summon.GetComponent<Summon>().summon(magicType, targetType);
             }
