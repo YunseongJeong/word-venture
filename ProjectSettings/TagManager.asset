@@ -9,6 +9,10 @@ TagManager:
   - Target
   - Enemy
   - MagicType
+  - Me
+  - Ally
+  - Attack
+  - Heal
   layers:
   - Default
   - TransparentFX

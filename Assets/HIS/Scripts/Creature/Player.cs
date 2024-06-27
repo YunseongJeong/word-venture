@@ -2,21 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Enemy
-{
-    public class MagicEnemy : Enemy
+public class Player : MonoBehaviour
     {
-        [SerializeField] GameObject fireShoot;
-        
+        protected int hp = 1;
+        protected int maxHp = 1;
         void Start()
         {
-            base.Start();
-        }
-
-        public override void Attack()
-        {
-            base.Attack();
-            Instantiate(fireShoot, transform.position,Quaternion.identity); 
+            
         }
         private void OnTriggerEnter2D(Collider2D other) 
         {
@@ -34,4 +26,3 @@ namespace Enemy
             }
         } 
     }
-}

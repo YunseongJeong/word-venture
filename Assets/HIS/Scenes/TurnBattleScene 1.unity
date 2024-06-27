@@ -122,6 +122,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &5378754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4171861036604340326, guid: 8d0443db6091f4ef78f5e9929a8bbf7c, type: 3}
+  m_PrefabInstance: {fileID: 3410752334428777337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &5378759
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5378754}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5, y: 1.5}
+    newSize: {x: 1.5, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5}
+  m_EdgeRadius: 0
 --- !u!1 &122068905
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bb7fbddc881b545aac5335034f55bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShootfirePrefab: {fileID: 2010477900630540246, guid: 99665142548a4044c964be2012502d70, type: 3}
+  ShooticePrefab: {fileID: 2010477900630540246, guid: 7a33cc3b8e3cb314cbad2a66a8797eb4, type: 3}
+  ShootrockPrefab: {fileID: 2010477900630540246, guid: a8062fcf1be4bf74794b575ddf3ce6b6, type: 3}
+  ShootlightningPrefab: {fileID: 2010477900630540246, guid: d4b2b27c771ad0b41b174f87a3cfee15, type: 3}
 --- !u!4 &338851662
 Transform:
   m_ObjectHideFlags: 0
@@ -829,6 +883,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854e8e1c07178444491685f3912c40d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DropfirePrefab: {fileID: 2010477900630540246, guid: 3072f65584d355c44aa596d49c87d495, type: 3}
+  DropicePrefab: {fileID: 2010477900630540246, guid: c6186b1acbbbe7e439a72e0b27e1ccf0, type: 3}
+  DroprockPrefab: {fileID: 2010477900630540246, guid: 9cdcb6f00ee21f349970fa33e56b3f9d, type: 3}
+  DroplightningPrefab: {fileID: 2010477900630540246, guid: d06e3b548912fe84ca45f27afc62c213, type: 3}
 --- !u!4 &595456799
 Transform:
   m_ObjectHideFlags: 0
@@ -1748,6 +1806,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9ba7af0ceb9c04aa9c1f8fa5ddd68a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealfirePrefab: {fileID: 2010477900630540246, guid: 54b09533806624c46a4ef2aec8b13928, type: 3}
+  HealicePrefab: {fileID: 2010477900630540246, guid: a6ffdc11d3ae7504e8d3a6a594f4e185, type: 3}
+  HealrockPrefab: {fileID: 2010477900630540246, guid: 05a185f02e9695f48b34a92edfb6ee34, type: 3}
+  HeallightningPrefab: {fileID: 2010477900630540246, guid: 7b6919e894bff95459a884f8d424c528, type: 3}
 --- !u!4 &1089430585
 Transform:
   m_ObjectHideFlags: 0
@@ -2096,6 +2158,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425239962}
   m_CullTransparentMesh: 1
+--- !u!1 &1555130159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5706048864065907321, guid: 7cb86518b3cbc4ad28b3c0bcca334ff3, type: 3}
+  m_PrefabInstance: {fileID: 2291235024043522976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1555130164
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555130159}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.8, y: 1.8}
+    newSize: {x: 1.8, y: 1.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.8, y: 1.8}
+  m_EdgeRadius: 0
 --- !u!1 &1604359411
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,9 +3052,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1989512084}
   - component: {fileID: 1989512083}
+  - component: {fileID: 1989512085}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Me
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3014,6 +3127,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1989512085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989512082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6dfe70f2bd979488484ae44b3646de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2291235024043522976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3070,6 +3195,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5706048864065907321, guid: 7cb86518b3cbc4ad28b3c0bcca334ff3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1555130164}
     - targetCorrespondingSourceObject: {fileID: 3020035256546399256, guid: 7cb86518b3cbc4ad28b3c0bcca334ff3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -3133,6 +3261,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4171861036604340326, guid: 8d0443db6091f4ef78f5e9929a8bbf7c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5378759}
     - targetCorrespondingSourceObject: {fileID: 7520114212264778204, guid: 8d0443db6091f4ef78f5e9929a8bbf7c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
