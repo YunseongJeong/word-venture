@@ -16,8 +16,8 @@ public class Drop : MonoBehaviour
         
     }
 
-    public void drop(MagicType magicType1, MagicType magicType2)
+    public void drop(Deck_Manage.MagicType magicType1, Deck_Manage.MagicType magicType2)
     {
-        
+        print("Drop" + magicType1.ToString() + magicType2.ToString());
     }
 }
