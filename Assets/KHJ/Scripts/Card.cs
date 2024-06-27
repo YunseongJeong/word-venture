@@ -6,9 +6,29 @@ using UnityEngine;
 using DG.Tweening;
 
 namespace Deck_Manage {
+
+
+    public enum MagicType
+    {
+        Shoot,
+        Heal,
+        Summon,
+        Drop,
+        Fire,
+        Ice,
+        Rock,
+        Lightning,
+        Enemy,
+        Ally,
+        Me
+
+    }
+
     public class Card : MonoBehaviour
     {
         [SerializeField] TMP_Text nameTMP;
+
+        public MagicType cardType;
 
         public Word word;
         public PRS originPRS;
@@ -17,6 +37,8 @@ namespace Deck_Manage {
         {
             this.word = word;
             nameTMP.text = this.word.name;
+            cardType = this.word.magicType;
+            gameObject.tag = this.word.tag;
         }
 
         public void MoveTransform(PRS prs, bool useDotween, float dotweenTime = 0)
