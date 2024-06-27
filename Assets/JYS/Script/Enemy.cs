@@ -224,6 +224,7 @@ namespace Enemy
             }
             else {
                 animator.SetTrigger("TakeHit");
+                UpdateIndicator();
             }
             
         }
