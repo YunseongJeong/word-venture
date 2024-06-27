@@ -15,23 +15,45 @@ MonoBehaviour:
   words:
   - name: Shoot
     percent: 10
+    tag: Spell
+    magicType: 0
   - name: Heal
     percent: 5
+    tag: Spell
+    magicType: 1
   - name: Drop
     percent: 10
+    tag: Spell
+    magicType: 3
   - name: Summon
     percent: 5
+    tag: Spell
+    magicType: 2
   - name: Me
     percent: 10
+    tag: Target
+    magicType: 10
   - name: Ally
     percent: 5
+    tag: Target
+    magicType: 9
   - name: Enemy
     percent: 15
+    tag: Target
+    magicType: 8
   - name: Fire
     percent: 8
+    tag: MagicType
+    magicType: 4
   - name: Rock
     percent: 7
+    tag: MagicType
+    magicType: 6
   - name: Ice
     percent: 8
+    tag: MagicType
+    magicType: 5
   - name: Lightning
     percent: 7
+    tag: MagicType
+    magicType: 7
