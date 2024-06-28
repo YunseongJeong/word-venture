@@ -14,6 +14,7 @@ namespace Enemy
         [SerializeField] public int maxHp;
         [SerializeField] public float moveDistance;
         [SerializeField] public float attackRange;
+        [SerializeField] public int damage;
     }
 
 
