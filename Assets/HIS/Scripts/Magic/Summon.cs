@@ -16,8 +16,8 @@ public class Summon : MonoBehaviour
         
     }
 
-    public void summon(MagicType magicType1, MagicType magicType2)
+    public void summon(Deck_Manage.MagicType magicType1, Deck_Manage.MagicType magicType2)
     {
-
+        print("summon" + magicType1.ToString() + magicType2.ToString());
     }
 }

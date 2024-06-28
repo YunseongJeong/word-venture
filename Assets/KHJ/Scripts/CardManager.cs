@@ -148,7 +148,7 @@ namespace Deck_Manage {
 
         public void CardMouseOver(Card card)
         {
-            if(!onPushArea1 && !onPushArea2 && !onPushArea3)
+            if(onCardArea)//!onPushArea1 && !onPushArea2 && !onPushArea3)
             {
                 EnlargeCard(true, card);
             }
@@ -156,7 +156,7 @@ namespace Deck_Manage {
 
         public void CardMouseExit(Card card)
         {
-            if(!onPushArea1 && !onPushArea2 && !onPushArea3)
+            if(onCardArea)//!onPushArea1 && !onPushArea2 && !onPushArea3)
             {
                 EnlargeCard(false, card);
             }
@@ -170,43 +170,49 @@ namespace Deck_Manage {
         public void CardMouseUp()
         {
             isMyCardDrag = false;
-            if (onPushArea1)
+            if (onPushArea1 && selectCard.CompareTag("Spell"))
             {
+                PushArea1.GetComponent<DropZone>().GetCard(selectCard.gameObject);
                 selectCard.MoveTransform(new PRS(PushArea1.transform.position, Util.QI, selectCard.originPRS.scale), false);
             }
-
-            if (onPushArea2)
+            else if (onPushArea2 && selectCard.CompareTag("MagicType"))
             {
+                PushArea2.GetComponent<DropZone>().GetCard(selectCard.gameObject);
                 selectCard.MoveTransform(new PRS(PushArea2.transform.position, Util.QI, selectCard.originPRS.scale), false);
             }
-
-            if (onPushArea3)
+            else if (onPushArea3 && selectCard.CompareTag("Target"))
             {
+                PushArea3.GetComponent<DropZone>().GetCard(selectCard.gameObject);
                 selectCard.MoveTransform(new PRS(PushArea3.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            }
+            else
+            {
+                selectCard.MoveTransform(selectCard.originPRS, false);
             }
         }
 
         void DragCard()
         {
-            if (!onCardArea && !onPushArea1 && !onPushArea2 && !onPushArea3)
-            {
-                selectCard.MoveTransform(new PRS(Util.MousePos, Util.QI, selectCard.originPRS.scale), false);
-            }
+            selectCard.MoveTransform(new PRS(Util.MousePos, Util.QI, selectCard.originPRS.scale), false);
+            //if (!onCardArea && !onPushArea1 && !onPushArea2 && !onPushArea3)
+            //{
+            //    selectCard.MoveTransform(new PRS(Util.MousePos, Util.QI, selectCard.originPRS.scale), false);
+            //}
             
-            else if (onPushArea1)
-            {
-                selectCard.MoveTransform(new PRS(PushArea1.transform.position, Util.QI, selectCard.originPRS.scale), false);
-            }
+            //else if (onPushArea1 && selectCard.CompareTag("Spell"))
+            //{
+            //    selectCard.MoveTransform(new PRS(PushArea1.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            //}
 
-            else if (onPushArea2)
-            {
-                selectCard.MoveTransform(new PRS(PushArea2.transform.position, Util.QI, selectCard.originPRS.scale), false);
-            }
+            //else if (onPushArea2 && selectCard.CompareTag("MagicType"))
+            //{
+            //    selectCard.MoveTransform(new PRS(PushArea2.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            //}
 
-            else if (onPushArea3)
-            {
-                selectCard.MoveTransform(new PRS(PushArea3.transform.position, Util.QI, selectCard.originPRS.scale), false);
-            }
+            //else if (onPushArea3 && selectCard.CompareTag("Target"))
+            //{
+            //    selectCard.MoveTransform(new PRS(PushArea3.transform.position, Util.QI, selectCard.originPRS.scale), false);
+            //}
         }
 
         void DetectCardArea()

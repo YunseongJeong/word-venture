@@ -12,7 +12,6 @@ namespace Enemy
         {
             base.Start();
         }
-
         public override void Attack(float distanceToPlayer)
         {
             base.Attack(distanceToPlayer);

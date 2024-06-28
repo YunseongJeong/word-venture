@@ -4,21 +4,36 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-    
-    }
+    public GameObject ShootfirePrefab;
+    public GameObject ShooticePrefab;
+    public GameObject ShootrockPrefab;
+    public GameObject ShootlightningPrefab;
 
-    // Update is called once per frame
-    void Update()
+    public void shoot(Deck_Manage.MagicType magicType1, Deck_Manage.MagicType magicType2)
     {
-        
-    }
+        GameObject target = GameObject.FindGameObjectWithTag(magicType2.ToString());
 
-    public void shoot(MagicType magicType1, MagicType magicType2)
-    {
-        
-    }
+        GameObject prefabToInstantiate = null;
 
+        switch (magicType1)
+        {
+            case Deck_Manage.MagicType.Fire:
+                prefabToInstantiate = ShootfirePrefab;
+                break;
+            case Deck_Manage.MagicType.Ice:
+                prefabToInstantiate = ShooticePrefab;
+                break;
+            case Deck_Manage.MagicType.Rock:
+                prefabToInstantiate = ShootrockPrefab;
+                break;
+            case Deck_Manage.MagicType.Lightning:
+                prefabToInstantiate = ShootlightningPrefab;
+                break;
+        }
+
+        if (prefabToInstantiate != null)
+        {
+            Instantiate(prefabToInstantiate, target.transform.position, Quaternion.identity);
+        }
+    }    
 }
