@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Deck_Manage;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -79,17 +80,31 @@ public class CombineZone : MonoBehaviour
         foreach (GameObject card in spellCards)
         {
             if(card != null)
+            {
+                Deck_Manage.Card spellCard = card.GetComponent<Deck_Manage.Card>();
+                Deck_Manage.CardManager.Inst.PopCard(spellCard);
                 Destroy(card);
+            }
+                
         }
         foreach (GameObject card in magicTypeCards)
         {
             if(card != null)
+            {
+                Deck_Manage.Card magicTypeCard = card.GetComponent<Deck_Manage.Card>();
+                Deck_Manage.CardManager.Inst.PopCard(magicTypeCard);
                 Destroy(card);
+            }  
         }
         foreach (GameObject card in targetCards)
         {
             if(card != null)
+            {
+                Deck_Manage.Card targetCard = card.GetComponent<Deck_Manage.Card>();
+                Deck_Manage.CardManager.Inst.PopCard(targetCard);
                 Destroy(card);
+            }
+                
         }
         spellCards.Clear();
         magicTypeCards.Clear();
