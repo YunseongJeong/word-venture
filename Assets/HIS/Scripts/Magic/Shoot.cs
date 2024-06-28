@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Deck_Manage;
 public class Shoot : MonoBehaviour
 {
     public GameObject ShootfirePrefab;
@@ -9,7 +9,7 @@ public class Shoot : MonoBehaviour
     public GameObject ShootrockPrefab;
     public GameObject ShootlightningPrefab;
 
-    public void shoot(Deck_Manage.MagicType magicType1, Deck_Manage.MagicType magicType2)
+    public void shoot(MagicType magicType1, MagicType magicType2)
     {
         GameObject target = GameObject.FindGameObjectWithTag(magicType2.ToString());
 
@@ -17,16 +17,16 @@ public class Shoot : MonoBehaviour
 
         switch (magicType1)
         {
-            case Deck_Manage.MagicType.Fire:
+            case MagicType.Fire:
                 prefabToInstantiate = ShootfirePrefab;
                 break;
-            case Deck_Manage.MagicType.Ice:
+            case MagicType.Ice:
                 prefabToInstantiate = ShooticePrefab;
                 break;
-            case Deck_Manage.MagicType.Rock:
+            case MagicType.Rock:
                 prefabToInstantiate = ShootrockPrefab;
                 break;
-            case Deck_Manage.MagicType.Lightning:
+            case MagicType.Lightning:
                 prefabToInstantiate = ShootlightningPrefab;
                 break;
         }
