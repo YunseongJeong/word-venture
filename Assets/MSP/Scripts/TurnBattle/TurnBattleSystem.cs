@@ -69,6 +69,7 @@ namespace TurnBattle
 
         [SerializeField] public CardManager cardManager;
         [SerializeField] public EnemyTestManager enemyManager;
+        [SerializeField] public EnemyPoolController enemyPoolController;
 
 
         private void Awake()

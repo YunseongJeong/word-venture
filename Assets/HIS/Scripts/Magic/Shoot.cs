@@ -9,16 +9,6 @@ public class Shoot : MonoBehaviour
     public GameObject ShootrockPrefab;
     public GameObject ShootlightningPrefab;
 
-    void Start()
-    {
-    
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void shoot(Deck_Manage.MagicType magicType1, Deck_Manage.MagicType magicType2)
     {
         GameObject target = GameObject.FindGameObjectWithTag(magicType2.ToString());
