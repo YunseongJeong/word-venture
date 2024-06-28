@@ -94,6 +94,11 @@ namespace Deck_Manage {
             CardAlignment();
         }
 
+        public void PopCard(Card Card)
+        {
+            myCards.Remove(Card);
+        }
+
         void SetOriginOrder()
         {
             int count = myCards.Count;
