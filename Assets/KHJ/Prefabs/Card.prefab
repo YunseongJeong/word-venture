@@ -184,9 +184,11 @@ GameObject:
   - component: {fileID: 4804684632866714608}
   - component: {fileID: 6986702738378238413}
   - component: {fileID: -1030804786114911904}
+  - component: {fileID: 1060630676217300025}
+  - component: {fileID: -241041188103841210}
   m_Layer: 0
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,7 +249,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -595888565
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1169078661, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -325,7 +327,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -349,3 +351,27 @@ PolygonCollider2D:
       - {x: 0.765625, y: 0.984375}
       - {x: 0.75, y: 1}
   m_UseDelaunayMesh: 0
+--- !u!225 &1060630676217300025
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282847734515516324}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &-241041188103841210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282847734515516324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f20e131bbd44e45a8681be2329f41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -5,7 +5,7 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     private CanvasGroup canvasGroup;
     private Transform originalParent;
-    private GameObject dropZone;
+    private CombineZone combineZone;
 
     void Awake()
     {
@@ -27,31 +27,30 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         canvasGroup.blocksRaycasts = true;
 
-        if (dropZone.CompareTag(tag)) 
+        if (combineZone != null && combineZone.CompareTag(tag))
         {
-            transform.SetParent(dropZone.transform);  
+            combineZone.AddCard(gameObject);
         }
         else
         {
-            transform.SetParent(originalParent);  
+            transform.SetParent(originalParent);
+            transform.localPosition = Vector3.zero;
         }
-
-        transform.localPosition = Vector3.zero; 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("DropZone"))  
+        if (other.CompareTag(tag)) 
         {
-            dropZone = other.gameObject;
+            combineZone = other.GetComponent<CombineZone>();
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("DropZone"))  
+        if (other.CompareTag(tag))
         {
-            dropZone = null;
+            combineZone = null;
         }
     }
 }

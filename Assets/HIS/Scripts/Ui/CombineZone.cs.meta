@@ -3,7 +3,12 @@ guid: 580c5554734312c4796f965184767778
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - activateButton: {fileID: 7275828648886930829, guid: 324e31ac312a904409ebde75e4177bd0, type: 3}
+  - Shoot: {instanceID: 0}
+  - Heal: {instanceID: 0}
+  - Drop: {instanceID: 0}
+  - Summon: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
