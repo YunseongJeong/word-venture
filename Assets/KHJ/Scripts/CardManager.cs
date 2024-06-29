@@ -138,11 +138,12 @@ namespace Deck_Manage {
             for (int i = 0;i< objCount;i++)
             {
                 var targetPos = Vector3.Lerp(Left.position, Right.position, objLerps[i]);
+                targetPos.y += 0.5f;
                 var targetRot = Quaternion.identity;
 
-                float curve = Mathf.Sqrt(Mathf.Pow(height, 2) - Mathf.Pow(objLerps[i] - 0.5f, 2));
-                targetPos.y += curve;
-                targetRot = Quaternion.Slerp(Left.rotation, Right.rotation, objLerps[i]);
+                // float curve = Mathf.Sqrt(Mathf.Pow(height, 2) - Mathf.Pow(objLerps[i] - 0.5f, 2));
+                // targetPos.y += curve;
+                // targetRot = Quaternion.Slerp(Left.rotation, Right.rotation, objLerps[i]);
 
                 results.Add(new PRS(targetPos, targetRot, scale));
             }
@@ -216,15 +217,15 @@ namespace Deck_Manage {
 
         void EnlargeCard(bool isEnlarge, Card card)
         {
-            if (isEnlarge)
-            {
-                Vector3 enlargePos = new Vector3(card.originPRS.pos.x, -3f, -10f);
-                card.MoveTransform(new PRS(enlargePos, Util.QI, new Vector3(1.896733f, 2.1f, 1) * 0.6f), false);
-            }
-            else
-                card.MoveTransform(card.originPRS, false);
+            // if (isEnlarge)
+            // {
+            //     Vector3 enlargePos = new Vector3(card.originPRS.pos.x, -3f, -10f);
+            //     card.MoveTransform(new PRS(enlargePos, Util.QI, new Vector3(1.896733f, 2.1f, 1) * 0.6f), false);
+            // }
+            // else
+            //     card.MoveTransform(card.originPRS, false);
 
-            card.GetComponent<Order>().SetMostFrontOrder(isEnlarge);
+            // card.GetComponent<Order>().SetMostFrontOrder(isEnlarge);
         }
 
         #endregion
