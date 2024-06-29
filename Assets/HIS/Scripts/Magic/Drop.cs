@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Deck_Manage;
 
 public class Drop : MonoBehaviour
 {
@@ -34,7 +35,8 @@ public class Drop : MonoBehaviour
         if (prefabToInstantiate != null)
         {
             Vector3 InstantiatePos = target.transform.position + new Vector3 (0f ,30f ,0f) ;
-            Instantiate(prefabToInstantiate, InstantiatePos , Quaternion.identity);
+            GameObject obj =  Instantiate(prefabToInstantiate, InstantiatePos , Quaternion.identity);
+            obj.GetComponent<SpellObj>().InitSpell(MagicType.Shoot, magicType1, target);
         }
     }
 }

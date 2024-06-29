@@ -32,7 +32,8 @@ public class Heal : MonoBehaviour
 
         if (prefabToInstantiate != null)
         {
-            Instantiate(prefabToInstantiate, target.transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(prefabToInstantiate, target.transform.position, Quaternion.identity);
+            obj.GetComponent<SpellObj>().InitSpell(Deck_Manage.MagicType.Heal, magicType1, target);
         }
     }
 }
