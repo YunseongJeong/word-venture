@@ -36,7 +36,7 @@ public class Drop : MonoBehaviour
         {
             Vector3 InstantiatePos = target.transform.position + new Vector3 (0f ,30f ,0f) ;
             GameObject obj =  Instantiate(prefabToInstantiate, InstantiatePos , Quaternion.identity);
-            obj.GetComponent<SpellObj>().InitSpell(MagicType.Shoot, magicType1, target);
+            obj.GetComponent<SpellObj>().InitSpell(MagicType.Drop, magicType1, target);
         }
     }
 }
