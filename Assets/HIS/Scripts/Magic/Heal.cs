@@ -8,21 +8,9 @@ public class Heal : MonoBehaviour
     public GameObject HealicePrefab;
     public GameObject HealrockPrefab;
     public GameObject HeallightningPrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void heal(Deck_Manage.MagicType magicType1, Deck_Manage.MagicType magicType2, SelectableObject target)
     {
-        
-    }
-
-    public void heal(Deck_Manage.MagicType magicType1, Deck_Manage.MagicType magicType2)
-    {
-        GameObject target = GameObject.FindGameObjectWithTag(magicType2.ToString());
 
         GameObject prefabToInstantiate = null;
 
@@ -44,7 +32,8 @@ public class Heal : MonoBehaviour
 
         if (prefabToInstantiate != null)
         {
-            Instantiate(prefabToInstantiate, target.transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(prefabToInstantiate, target.transform.position, Quaternion.identity);
+            obj.GetComponent<SpellObj>().InitSpell(Deck_Manage.MagicType.Heal, magicType1, target);
         }
     }
 }

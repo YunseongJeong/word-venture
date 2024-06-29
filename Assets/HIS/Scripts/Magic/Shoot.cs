@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Deck_Manage;
+using Enemy;
 public class Shoot : MonoBehaviour
 {
     public GameObject ShootfirePrefab;
@@ -9,9 +10,8 @@ public class Shoot : MonoBehaviour
     public GameObject ShootrockPrefab;
     public GameObject ShootlightningPrefab;
 
-    public void shoot(MagicType magicType1, MagicType magicType2)
+    public void shoot(MagicType magicType1, MagicType magicType2, SelectableObject target)
     {
-        GameObject target = GameObject.FindGameObjectWithTag(magicType2.ToString());
 
         GameObject prefabToInstantiate = null;
 
@@ -33,7 +33,8 @@ public class Shoot : MonoBehaviour
 
         if (prefabToInstantiate != null)
         {
-            Instantiate(prefabToInstantiate, target.transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(prefabToInstantiate, PlayerTestForEnemy.Player().transform.position, Quaternion.identity);
+            obj.GetComponent<SpellObj>().InitSpell(MagicType.Shoot, magicType1, target);
         }
     }    
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Deck_Manage;
 
 public class Drop : MonoBehaviour
 {
@@ -8,21 +9,10 @@ public class Drop : MonoBehaviour
     public GameObject DropicePrefab;
     public GameObject DroprockPrefab;
     public GameObject DroplightningPrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void drop(Deck_Manage.MagicType magicType1, Deck_Manage.MagicType magicType2, SelectableObject target)
     {
-        
-    }
-
-    public void drop(Deck_Manage.MagicType magicType1, Deck_Manage.MagicType magicType2)
-    {
-        GameObject target = GameObject.FindGameObjectWithTag(magicType2.ToString());
+        //GameObject target = GameObject.FindGameObjectWithTag(magicType2.ToString());
 
         GameObject prefabToInstantiate = null;
 
@@ -45,7 +35,8 @@ public class Drop : MonoBehaviour
         if (prefabToInstantiate != null)
         {
             Vector3 InstantiatePos = target.transform.position + new Vector3 (0f ,30f ,0f) ;
-            Instantiate(prefabToInstantiate, InstantiatePos , Quaternion.identity);
+            GameObject obj =  Instantiate(prefabToInstantiate, InstantiatePos , Quaternion.identity);
+            obj.GetComponent<SpellObj>().InitSpell(MagicType.Drop, magicType1, target);
         }
     }
 }

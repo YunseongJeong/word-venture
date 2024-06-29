@@ -266,8 +266,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7466982669245669187}
   - component: {fileID: 1907602853510310545}
+  - component: {fileID: 4312655311366198572}
   - component: {fileID: 6858491686044566968}
   - component: {fileID: 1357724888432688958}
+  - component: {fileID: 1633409543294391971}
   m_Layer: 0
   m_Name: MagicEnemy
   m_TagString: Enemy
@@ -344,6 +346,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4312655311366198572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171861036604340326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e07b8e7fa7d4be783fa74aeb98163f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6858491686044566968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +370,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4156a9bbefd7c4871ab212914637632e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  moveDistance: 5
+  shield: 0
+  attackRange: 3
   fireShoot: {fileID: 2547689438096466718, guid: a86609dcc6d3f48ed880202678f77c6e, type: 3}
 --- !u!95 &1357724888432688958
 Animator:
@@ -378,6 +396,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &1633409543294391971
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171861036604340326}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5, y: 1.5}
+    newSize: {x: 1.5, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &7441021264198724564
 GameObject:
   m_ObjectHideFlags: 0
