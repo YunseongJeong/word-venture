@@ -153,7 +153,7 @@ namespace Deck_Manage {
 
         public void CardMouseOver(Card card)
         {
-            if(onCardArea)//!onPushArea1 && !onPushArea2 && !onPushArea3)
+            if(onCardArea)
             {
                 EnlargeCard(true, card);
             }
@@ -161,7 +161,7 @@ namespace Deck_Manage {
 
         public void CardMouseExit(Card card)
         {
-            if(onCardArea)//!onPushArea1 && !onPushArea2 && !onPushArea3)
+            if(!onPushArea1 && !onPushArea2 && !onPushArea3)
             {
                 EnlargeCard(false, card);
             }
@@ -199,25 +199,6 @@ namespace Deck_Manage {
         void DragCard()
         {
             selectCard.MoveTransform(new PRS(Util.MousePos, Util.QI, selectCard.originPRS.scale), false);
-            //if (!onCardArea && !onPushArea1 && !onPushArea2 && !onPushArea3)
-            //{
-            //    selectCard.MoveTransform(new PRS(Util.MousePos, Util.QI, selectCard.originPRS.scale), false);
-            //}
-            
-            //else if (onPushArea1 && selectCard.CompareTag("Spell"))
-            //{
-            //    selectCard.MoveTransform(new PRS(PushArea1.transform.position, Util.QI, selectCard.originPRS.scale), false);
-            //}
-
-            //else if (onPushArea2 && selectCard.CompareTag("MagicType"))
-            //{
-            //    selectCard.MoveTransform(new PRS(PushArea2.transform.position, Util.QI, selectCard.originPRS.scale), false);
-            //}
-
-            //else if (onPushArea3 && selectCard.CompareTag("Target"))
-            //{
-            //    selectCard.MoveTransform(new PRS(PushArea3.transform.position, Util.QI, selectCard.originPRS.scale), false);
-            //}
         }
 
         void DetectCardArea()
