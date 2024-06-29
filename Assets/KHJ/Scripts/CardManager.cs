@@ -32,6 +32,7 @@ namespace Deck_Manage {
         bool onPushArea1;
         bool onPushArea2;
         bool onPushArea3;
+        
 
         public Word PopWord()
         {
@@ -64,11 +65,20 @@ namespace Deck_Manage {
 
         void Start()
         {
+            Map_scene.MapMove.StagePosition = 0;
+            WordOS_state();
             SetupWordBuffer();
         }
 
         void Update()
         {
+            if (Input.GetKey(KeyCode.L) && Map_scene.MapMove.StagePosition <= 4)
+            {
+                Map_scene.MapMove.StagePosition++;
+                WordOS_state();
+                SetupWordBuffer();
+            }
+
             if (Input.GetKeyDown(KeyCode.Space) && !isMyCardDrag)
                 AddCard();
 
@@ -148,6 +158,33 @@ namespace Deck_Manage {
                 results.Add(new PRS(targetPos, targetRot, scale));
             }
             return results;
+        }
+
+
+
+        void WordOS_state()
+        {
+            switch(Map_scene.MapMove.StagePosition)
+            {
+                case 2:
+                    wordSO.words[2].percent = 5;
+                    wordSO.words[4].percent = 5;
+                    wordSO.words[8].percent = 8;
+                    break;
+                case 3:
+                    wordSO.words[9].percent = 8;
+                    break;
+                case 4:
+                    wordSO.words[10].percent = 8;
+                    break;
+                default:
+                    wordSO.words[2].percent = 0;
+                    wordSO.words[4].percent = 0;
+                    wordSO.words[8].percent = 0;
+                    wordSO.words[9].percent = 0;
+                    wordSO.words[10].percent = 0;
+                    break;
+            }
         }
 
         #region MyCard
