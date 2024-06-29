@@ -10,6 +10,8 @@ namespace Deck_Manage
     {
         public string name;
         public int percent;
+        public string tag;
+        public MagicType magicType;
     }
 
 

@@ -37,17 +37,28 @@ namespace Enemy
             }
         }
 
+        public void SpawnEnemies()
+        {
+            enemyPoolController.SpawnObject(new Vector3(0, -3, 0), 0);
+            enemyPoolController.SpawnObject(new Vector3(4, -3, 0), 1);
+            enemyPoolController.SpawnObject(new Vector3(8, -3, 0), 2);
+            InitList(enemies);
+        }
+
         void Update()
         {
-           if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 PlayTurn();
             } else if (Input.GetKeyDown(KeyCode.Return))
             {
-                enemyPoolController.SpawnObject(new Vector3(0, 0, 0), 0);
-                enemyPoolController.SpawnObject(new Vector3(4, 0, 0), 1);
-                enemyPoolController.SpawnObject(new Vector3(8, 0, 0), 2);
-                InitList(enemies);
+                SpawnEnemies();
+            } else if (Input.GetKeyDown(KeyCode.D))
+            {
+                foreach (Enemy enemy in enemies)
+                {
+                    enemy.TakeHit(1);
+                }
             }
         }
     }

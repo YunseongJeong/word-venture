@@ -22,7 +22,6 @@ namespace Enemy
             {
                 EnemyData enemyData = enemyDataContainer.GetGearData(i);
                 enemyPools.Add(new List<GameObject>());
-                print(i);
                 MakeObjects(enemyData, 5, enemyPools[i]);
 
             }
