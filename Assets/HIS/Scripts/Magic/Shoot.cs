@@ -9,9 +9,8 @@ public class Shoot : MonoBehaviour
     public GameObject ShootrockPrefab;
     public GameObject ShootlightningPrefab;
 
-    public void shoot(MagicType magicType1, MagicType magicType2)
+    public void shoot(MagicType magicType1, MagicType magicType2, SelectableObject target)
     {
-        GameObject target = GameObject.FindGameObjectWithTag(magicType2.ToString());
 
         GameObject prefabToInstantiate = null;
 
