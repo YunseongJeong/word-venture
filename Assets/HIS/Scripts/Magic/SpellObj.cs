@@ -32,7 +32,6 @@ public class SpellObj : MonoBehaviour
 
         if (this.spellType == Deck_Manage.MagicType.Drop)
         {
-            print("tlqkf");
             moveVector = new Vector3(0, -1 * speed, 0);
         } else if (this.spellType == Deck_Manage.MagicType.Shoot)
         {
@@ -61,7 +60,7 @@ public class SpellObj : MonoBehaviour
     }
     float speed = 10;
     Vector3 moveVector;
-    int damage = 1;
+    int damage = 10;
 
     public void InitProjectileDamage(int damage)
     {
@@ -87,7 +86,7 @@ public class SpellObj : MonoBehaviour
                 collision.GetComponent<Enemy.Enemy>().TakeHit(CalculateDamage(damage, collision.gameObject.GetComponent<Enemy.Enemy>().enemyType));
             } else
             {
-                // 플레이어에 공격 판magicType
+                collision.GetComponent<Enemy.Player>().TakeHit(CalculateDamage(damage, Deck_Manage.MagicType.Holy));
             }
             
             StartCoroutine(DestoryCounter());
