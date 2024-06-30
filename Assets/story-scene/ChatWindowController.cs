@@ -7,7 +7,6 @@ public class ChatWindowController : MonoBehaviour
 {
     private TMP_Text chatName;
     private TMP_Text chatText;
-    
     private void Awake()
     {
         InitTmp_text();

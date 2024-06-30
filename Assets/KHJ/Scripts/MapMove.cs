@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Map_scene
@@ -24,6 +25,15 @@ namespace Map_scene
             ShowStage();
             ShowBattle();
             Clear();
+            MoveMap();
+        }
+
+        void MoveMap()
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                SceneManager.LoadScene("TurnBattleScene");
+            }
         }
 
         void CharacterMove()
