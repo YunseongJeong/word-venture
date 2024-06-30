@@ -51,19 +51,10 @@ namespace Enemy
         }
     }
 
-    public class EnemyBlockAction : EnemyAction
-    {
-        public EnemyBlockAction(Enemy enemy) : base(enemy) { }
-        public override void PlayAction(float distanceToPlayer)
-        {
-            enemy.shield += 5;
-            enemy.UpdateIndicator();
-        }
-    }
 
     public enum ActionType
     {
-        ATTACK = 0, MOVE = 1, BLOCK = 2
+        ATTACK = 0, MOVE = 1
     }
 
 
@@ -72,7 +63,6 @@ namespace Enemy
         protected Animator animator;
 
         protected TMP_Text hpText;
-        protected TMP_Text shieldText;
 
         public Deck_Manage.MagicType enemyType;
 
@@ -82,8 +72,6 @@ namespace Enemy
         protected int damage;
 
         public float moveDistance = 5;
-
-        public int shield = 0;
 
         public float attackRange = 3;
 
@@ -109,21 +97,12 @@ namespace Enemy
 
             enemyActions.Add(new EnemyAttackAction(this));
             enemyActions.Add(new EnemyMoveAction(this));
-            enemyActions.Add(new EnemyBlockAction(this));
         }
         
 
 
         private ActionType MakeActionDecision(float distanceToPlayer)
         {
-            if (hp < maxHp / 2)
-            {
-                float random = Random.Range(-1, 1);
-                if (random > 0)
-                {
-                    return ActionType.BLOCK;
-                }
-            }
 
             if (distanceToPlayer > attackRange)
             {
@@ -137,7 +116,6 @@ namespace Enemy
         public void UpdateIndicator()
         {
             hpText.SetText(hp.ToString());
-            shieldText.SetText(shield.ToString());
         }
 
         
@@ -234,19 +212,8 @@ namespace Enemy
 
         private void InitIndicators()
         {
-            TMP_Text[] textTemp = gameObject.GetComponentsInChildren<TMP_Text>();
-            if (textTemp[0].gameObject.name == "HpIndicator")
-            {
-                hpText = textTemp[0];
-                shieldText = textTemp[1];
-            }
-            else
-            {
-                hpText = textTemp[1];
-                shieldText = textTemp[0];
-            }
-            hpText.SetText(maxHp.ToString()) ;
-            shieldText.SetText(0.ToString());
+            hpText = gameObject.GetComponentInChildren<TMP_Text>();
+            hpText.SetText(maxHp.ToString());
         }
 
         private void OnTriggerEnter2D(Collider2D other) 
