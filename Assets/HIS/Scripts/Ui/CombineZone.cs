@@ -103,6 +103,8 @@ public class CombineZone : MonoBehaviour
             }  
         }
 
+        Deck_Manage.CardManager.Inst.CardAlignment();
+
         spellCards.Clear();
         magicTypeCards.Clear();
         activateButton.gameObject.SetActive(false);
