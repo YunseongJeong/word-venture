@@ -87,7 +87,7 @@ public class SpellObj : MonoBehaviour
                 collision.GetComponent<Enemy.Enemy>().TakeHit(CalculateDamage(damage, collision.gameObject.GetComponent<Enemy.Enemy>().enemyType));
             } else
             {
-                // 플레이어에 공격 판정
+                // 플레이어에 공격 판magicType
             }
             
             StartCoroutine(DestoryCounter());
@@ -110,7 +110,7 @@ public class SpellObj : MonoBehaviour
             result *= 0.5f;
         }
 
-        result *= magicAffinityTable.GetAffinity(spellType, enemyMagicType);
+        result *= magicAffinityTable.GetAffinity(magicType, enemyMagicType);
 
         return ((int)result);
     }
