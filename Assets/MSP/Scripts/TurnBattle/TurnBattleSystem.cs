@@ -48,14 +48,13 @@ namespace TurnBattle
         {
             //Debug.Log("Enemy Turn Start!");
             TurnBattleSystem.Instance.enemyManager.PlayTurn();
-            TurnBattleSystem.Instance.ChangeTurn(TurnBattleSystem.PlayerTurn);
-            //OnEnd();
+            //TurnBattleSystem.Instance.ChangeTurn(TurnBattleSystem.PlayerTurn);
+            OnEnd();
         }
 
         public override void OnEnd() // When Enemy Action End...
         {
             //Debug.Log("Enemy Turn End!");
-            
         }
     }
 

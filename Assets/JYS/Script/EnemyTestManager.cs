@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TurnBattle;
 using UnityEngine;
 
 namespace Enemy
@@ -36,6 +37,7 @@ namespace Enemy
             {
                 enemy.PlayTurnAction(enemy.transform.position.x - player.transform.position.x);
             }
+            TurnBattleSystem.Instance.ChangeTurn(TurnBattleSystem.PlayerTurn);
         }
 
         public void SpawnEnemies()
