@@ -41,7 +41,6 @@ public class CombineZone : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(false);
         activateButton.gameObject.SetActive(false);
     }
 
