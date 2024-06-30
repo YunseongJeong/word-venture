@@ -10,6 +10,28 @@ public class CombineZone : MonoBehaviour
     public List<GameObject> spellCards = new List<GameObject>();
     public List<GameObject> magicTypeCards = new List<GameObject>();
 
+    private List<SelectableObject> allSelectableObjects = new List<SelectableObject>();
+
+    void InitSelectableObjectList()
+    {
+        allSelectableObjects.Clear();
+        
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject gameObject in gameObjects)
+        {
+            allSelectableObjects.Add(gameObject.GetComponent<SelectableObject>());
+        }
+        allSelectableObjects.Add(GameObject.FindGameObjectWithTag("Me").GetComponent<SelectableObject>());
+    }
+
+    void SetAllSelectable(bool selectable)
+    {
+        foreach (SelectableObject gameObject in allSelectableObjects)
+        {
+            gameObject.SetSelectable(selectable);
+        }
+    }
+
     [SerializeField] MagicAAffinity.MagicAffinityTable magicAffinityTable;
 
     public Button activateButton;
@@ -52,6 +74,8 @@ public class CombineZone : MonoBehaviour
     }
     IEnumerator CastSpell()
     {
+        InitSelectableObjectList();
+        SetAllSelectable(true);
         Deck_Manage.MagicType spellType = spellCards[0].GetComponent<Deck_Manage.Card>().cardType;
         Deck_Manage.MagicType magicType = magicTypeCards[0].GetComponent<Deck_Manage.Card>().cardType;
 
@@ -73,6 +97,7 @@ public class CombineZone : MonoBehaviour
         {
             Summon.GetComponent<Summon>().summon(magicType, target, magicAffinityTable);
         }
+        SetAllSelectable(false);
         target = null;
     }
 
