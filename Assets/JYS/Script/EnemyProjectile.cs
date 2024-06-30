@@ -32,7 +32,7 @@ namespace Enemy
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player")) {
+            if (collision.CompareTag("Me")) {
                 print(collision.gameObject.tag);
                 Player.PlayerInt().TakeHit(damage);
                 Destroy(gameObject);
