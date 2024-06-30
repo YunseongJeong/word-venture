@@ -60,7 +60,7 @@ public class SpellObj : MonoBehaviour
     }
     float speed = 10;
     Vector3 moveVector;
-    int damage = 10;
+    int damage = 1000;
 
     public void InitProjectileDamage(int damage)
     {

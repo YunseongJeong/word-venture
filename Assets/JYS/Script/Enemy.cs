@@ -94,7 +94,6 @@ namespace Enemy
 
         private void InitEnemyActions()
         {
-
             enemyActions.Add(new EnemyAttackAction(this));
             enemyActions.Add(new EnemyMoveAction(this));
         }
@@ -216,21 +215,21 @@ namespace Enemy
             hpText.SetText(maxHp.ToString());
         }
 
-        private void OnTriggerEnter2D(Collider2D other) 
-        {
-            if (other.CompareTag("Attack"))
-            {
-                hp -= 1;
-            } 
-            if (other.CompareTag("Heal"))
-            {
-                hp += 1;
-            }
-            if (hp <= 0)
-            {
-                Destroy(gameObject);
-            }
-        } 
+        //private void OnTriggerEnter2D(Collider2D other) 
+        //{
+        //    if (other.CompareTag("Attack"))
+        //    {
+        //        hp -= 1;
+        //    } 
+        //    if (other.CompareTag("Heal"))
+        //    {
+        //        hp += 1;
+        //    }
+        //    if (hp <= 0)
+        //    {
+        //        Death();
+        //    }
+        //} 
     }
 }
 
