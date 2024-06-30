@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Enemy;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Enemy{
     public class Player : MonoBehaviour
@@ -39,7 +40,7 @@ namespace Enemy{
         protected void Death()
         {
             gameObject.SetActive(false);
-
+            SceneManager.LoadScene("GameOverScene");
         }
 
         public void TakeHit(int damage)
