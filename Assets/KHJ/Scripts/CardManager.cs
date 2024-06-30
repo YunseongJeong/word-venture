@@ -72,7 +72,7 @@ namespace Deck_Manage {
 
         void Update()
         {
-            if (Input.GetKey(KeyCode.L) && Map_scene.MapMove.StagePosition <= 4)
+            if (Input.GetKeyDown(KeyCode.U) && Map_scene.MapMove.StagePosition <= 4)
             {
                 Map_scene.MapMove.StagePosition++;
                 WordOS_state();
