@@ -56,6 +56,6 @@ public class StoryController : MonoBehaviour
 
     private void LoadStoryScene()
     {
-        SceneManager.LoadScene("StoryScene");
+        SceneManager.LoadScene("Map_scene");
     }
 }
