@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour
     public GameObject ShootrockPrefab;
     public GameObject ShootlightningPrefab;
 
-    public void shoot(MagicType magicType1, MagicType magicType2, SelectableObject target)
+    public void shoot(MagicType magicType1, SelectableObject target)
     {
 
         GameObject prefabToInstantiate = null;

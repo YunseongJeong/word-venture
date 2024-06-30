@@ -10,7 +10,7 @@ public class Drop : MonoBehaviour
     public GameObject DroprockPrefab;
     public GameObject DroplightningPrefab;
 
-    public void drop(Deck_Manage.MagicType magicType1, Deck_Manage.MagicType magicType2, SelectableObject target)
+    public void drop(Deck_Manage.MagicType magicType1, SelectableObject target)
     {
         //GameObject target = GameObject.FindGameObjectWithTag(magicType2.ToString());
 
