@@ -21,7 +21,6 @@ namespace Deck_Manage {
         Enemy,
         Ally,
         Me
-
     }
 
     public class Card : MonoBehaviour

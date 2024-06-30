@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class SpellObj : MonoBehaviour
 {
+    Animator animator;
     Deck_Manage.MagicType spellType;
     Deck_Manage.MagicType magicType;
     SelectableObject target;
@@ -49,6 +50,7 @@ public class SpellObj : MonoBehaviour
     void Start()
     {
         moveVector = new Vector3(speed, 0, 0);
+        animator = GetComponent<Animator>();
     }
 
 
@@ -56,9 +58,16 @@ public class SpellObj : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            moveVector = Vector3.zero;
             print(collision.gameObject.tag);
+            animator.SetTrigger("Hit");
             collision.GetComponent<Enemy.Enemy>().TakeHit(damage);
-            Destroy(gameObject);
+            StartCoroutine(DestoryCounter());
         }
+    }
+    IEnumerator DestoryCounter()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }
