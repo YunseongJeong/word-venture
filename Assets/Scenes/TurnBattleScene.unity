@@ -485,9 +485,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShootfirePrefab: {fileID: 493545600473039580, guid: 994595735b806491da8f02a71dfa91a9, type: 3}
   ShooticePrefab: {fileID: 6284315148270315971, guid: 1103a37904a0144a7b524c3443d8c924, type: 3}
-  ShootrockPrefab: {fileID: 2010477900630540246, guid: a8062fcf1be4bf74794b575ddf3ce6b6, type: 3}
-  ShootlightningPrefab: {fileID: 493545600473039580, guid: 994595735b806491da8f02a71dfa91a9, type: 3}
-  ShootHolyPrefab: {fileID: 0}
+  ShootrockPrefab: {fileID: 2364244249020601147, guid: 37e024773271a4531a901fcc83c9d951, type: 3}
+  ShootlightningPrefab: {fileID: 32104051726353619, guid: abfe984222f34430ebbf9989e468ca46, type: 3}
+  ShootHolyPrefab: {fileID: 9117082750993523963, guid: cbe5265760c5c44b9a4a27a040679eb2, type: 3}
 --- !u!4 &338851662
 Transform:
   m_ObjectHideFlags: 0
