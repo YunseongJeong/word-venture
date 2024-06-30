@@ -119,7 +119,7 @@ namespace Deck_Manage {
             }
         }
 
-        void CardAlignment()
+        public void CardAlignment()
         {
             List<PRS> originCardPRSs = new List<PRS>();
             originCardPRSs = RoundAlignment(CardLeft, CardRight, myCards.Count, 0.5f, new Vector3(1.896733f, 2.1f, 1) * 0.4f);
@@ -166,9 +166,19 @@ namespace Deck_Manage {
         {
             switch(Map_scene.MapMove.StagePosition)
             {
-                case 2:
+                case 0:
+                    wordSO.words[1].percent = 0;
+                    wordSO.words[2].percent = 0;
+                    wordSO.words[4].percent = 0;
+                    wordSO.words[5].percent = 0;
+                    wordSO.words[6].percent = 0;
+                    wordSO.words[7].percent = 0;
+                    break;
+                case 1:
                     wordSO.words[1].percent = 5;
                     wordSO.words[2].percent = 5;
+                    break;
+                case 2:
                     wordSO.words[4].percent = 8;
                     break;
                 case 3:
@@ -179,12 +189,6 @@ namespace Deck_Manage {
                     wordSO.words[7].percent = 8;
                     break;
                 default:
-                    wordSO.words[1].percent = 0;
-                    wordSO.words[2].percent = 0;
-                    wordSO.words[4].percent = 0;
-                    wordSO.words[5].percent = 0;
-                    wordSO.words[6].percent = 0;
-                    wordSO.words[7].percent = 0;
                     break;
             }
         }
