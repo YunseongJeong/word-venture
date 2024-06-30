@@ -5,18 +5,17 @@ using TMPro;
 using UnityEngine;
 
 namespace Enemy{
-    public class PlayerTestForEnemy : MonoBehaviour
+    public class Player : MonoBehaviour
     {
 
-        public static PlayerTestForEnemy Player()
+        public static Player PlayerInt()
         {
             return instance;
         }
 
-        static PlayerTestForEnemy instance;
+        static Player instance;
 
         protected TMP_Text hpText;
-        protected TMP_Text shieldText;
 
         protected int hp = 100;
         protected int maxHp = 100;
@@ -27,7 +26,6 @@ namespace Enemy{
         public void UpdateIndicator()
         {
             hpText.SetText(hp.ToString());
-            shieldText.SetText(shield.ToString());
         }
 
         private void Awake()
@@ -62,19 +60,9 @@ namespace Enemy{
 
         private void InitIndicators()
         {
-            TMP_Text[] textTemp = gameObject.GetComponentsInChildren<TMP_Text>();
-            if (textTemp[0].gameObject.name == "HpIndicator")
-            {
-                hpText = textTemp[0];
-                shieldText = textTemp[1];
-            }
-            else
-            {
-                hpText = textTemp[1];
-                shieldText = textTemp[0];
-            }
+            hpText = gameObject.GetComponentInChildren<TMP_Text>();
+
             hpText.SetText(maxHp.ToString());
-            shieldText.SetText(0.ToString());
         }
     }
 }
