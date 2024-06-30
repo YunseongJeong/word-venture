@@ -142,12 +142,12 @@ namespace Enemy
         private void Awake()
         {
             InitIndicators();
+            InitEnemyActions();
         }
 
         protected virtual void Start()
         {
             animator = GetComponent<Animator>();
-            InitEnemyActions();
         }
 
    
