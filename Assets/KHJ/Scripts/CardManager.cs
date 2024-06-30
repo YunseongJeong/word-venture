@@ -167,22 +167,24 @@ namespace Deck_Manage {
             switch(Map_scene.MapMove.StagePosition)
             {
                 case 2:
+                    wordSO.words[1].percent = 5;
                     wordSO.words[2].percent = 5;
-                    wordSO.words[4].percent = 5;
-                    wordSO.words[8].percent = 8;
+                    wordSO.words[4].percent = 8;
                     break;
                 case 3:
-                    wordSO.words[9].percent = 8;
+                    wordSO.words[5].percent = 8;
+                    wordSO.words[6].percent = 8;
                     break;
                 case 4:
-                    wordSO.words[10].percent = 8;
+                    wordSO.words[7].percent = 8;
                     break;
                 default:
+                    wordSO.words[1].percent = 0;
                     wordSO.words[2].percent = 0;
                     wordSO.words[4].percent = 0;
-                    wordSO.words[8].percent = 0;
-                    wordSO.words[9].percent = 0;
-                    wordSO.words[10].percent = 0;
+                    wordSO.words[5].percent = 0;
+                    wordSO.words[6].percent = 0;
+                    wordSO.words[7].percent = 0;
                     break;
             }
         }
