@@ -39,9 +39,9 @@ namespace Enemy
 
         public void SpawnEnemies()
         {
-            enemyPoolController.SpawnObject(new Vector3(0, -3, 0), 0);
-            enemyPoolController.SpawnObject(new Vector3(4, -3, 0), 1);
-            enemyPoolController.SpawnObject(new Vector3(8, -3, 0), 2);
+            enemyPoolController.SpawnObject(new Vector3(0, -2, 0), 0);
+            enemyPoolController.SpawnObject(new Vector3(4, -2, 0), 1);
+            enemyPoolController.SpawnObject(new Vector3(8, -2, 0), 2);
             InitList(enemies);
         }
 
