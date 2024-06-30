@@ -44,4 +44,4 @@ MonoBehaviour:
   - name: Holy
     percent: 0
     tag: MagicType
-    magicType: 7
+    magicType: 3
