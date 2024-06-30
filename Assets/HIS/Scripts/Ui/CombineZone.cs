@@ -71,10 +71,6 @@ public class CombineZone : MonoBehaviour
 
             Shoot.GetComponent<Shoot>().shoot(magicType, targetType, target);
         }
-        else if (spellType == Deck_Manage.MagicType.Heal)
-        {
-            Heal.GetComponent<Heal>().heal(magicType, targetType, target);
-        }
         else if (spellType == Deck_Manage.MagicType.Drop)
         {
             Drop.GetComponent<Drop>().drop(magicType, targetType, target);
