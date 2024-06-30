@@ -34,7 +34,7 @@ namespace Enemy
         {
             if (collision.CompareTag("Player")) {
                 print(collision.gameObject.tag);
-                PlayerTestForEnemy.Player().TakeHit(damage);
+                Player.PlayerInt().TakeHit(damage);
                 Destroy(gameObject);
             }
         }
