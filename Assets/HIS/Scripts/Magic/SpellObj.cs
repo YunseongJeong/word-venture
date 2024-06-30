@@ -20,12 +20,23 @@ public class SpellObj : MonoBehaviour
         this.magicType = magicType;
         this.target = target;
 
-        if (this.spellType == Deck_Manage.MagicType.Shoot)
+        if (this.spellType == Deck_Manage.MagicType.Drop)
+        {
+            print("tlqkf");
+            moveVector = new Vector3(0, -1 * speed, 0);
+        } else if (this.spellType == Deck_Manage.MagicType.Shoot)
+        {
+            moveVector = new Vector3(speed, 0, 0);
+        }
+
+        if (this.spellType == Deck_Manage.MagicType.Shoot || this.spellType == Deck_Manage.MagicType.Drop)
         {
             StartCoroutine(ShootAction());
         }
     }
     float maxTime = 5;
+
+
     IEnumerator ShootAction()
     {
         for (float i = 0; i < maxTime;)
@@ -49,7 +60,7 @@ public class SpellObj : MonoBehaviour
 
     void Start()
     {
-        moveVector = new Vector3(speed, 0, 0);
+        
         animator = GetComponent<Animator>();
     }
 

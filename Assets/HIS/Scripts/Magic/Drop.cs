@@ -35,10 +35,11 @@ public class Drop : MonoBehaviour
                 prefabToInstantiate = DropholyPrefab;
                 break;
         }
-
+        print("tqltlkqff");
         if (prefabToInstantiate != null)
         {
-            Vector3 InstantiatePos = target.transform.position + new Vector3 (0f ,30f ,0f) ;
+            print("tqlf");
+            Vector3 InstantiatePos = target.transform.position + new Vector3 (0f ,10f ,0f) ;
             GameObject obj =  Instantiate(prefabToInstantiate, InstantiatePos , Quaternion.identity);
             obj.GetComponent<SpellObj>().InitSpell(MagicType.Drop, magicType1, target);
         }
