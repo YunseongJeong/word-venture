@@ -31,6 +31,7 @@ namespace Enemy
 
         public void PlayTurn()
         {
+            InitList(enemies);
             foreach(Enemy enemy in enemies)
             {
                 enemy.PlayTurnAction(enemy.transform.position.x - player.transform.position.x);
@@ -39,9 +40,9 @@ namespace Enemy
 
         public void SpawnEnemies()
         {
-            enemyPoolController.SpawnObject(new Vector3(0, -2, 0), 0);
-            enemyPoolController.SpawnObject(new Vector3(4, -2, 0), 1);
-            enemyPoolController.SpawnObject(new Vector3(8, -2, 0), 2);
+            enemyPoolController.SpawnObject(0, 0);
+            enemyPoolController.SpawnObject(4, 1);
+            enemyPoolController.SpawnObject(8, 2);
             InitList(enemies);
         }
 
