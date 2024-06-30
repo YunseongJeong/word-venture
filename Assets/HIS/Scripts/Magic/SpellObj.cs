@@ -82,7 +82,14 @@ public class SpellObj : MonoBehaviour
             moveVector = Vector3.zero;
             print(collision.gameObject.tag);
             animator.SetTrigger("Hit");
-            collision.GetComponent<Enemy.Enemy>().TakeHit(CalculateDamage(damage, collision.gameObject.GetComponent<Enemy.Enemy>().enemyType));
+            if (collision.CompareTag("Enemy"))
+            {
+                collision.GetComponent<Enemy.Enemy>().TakeHit(CalculateDamage(damage, collision.gameObject.GetComponent<Enemy.Enemy>().enemyType));
+            } else
+            {
+                // 플레이어에 공격 판정
+            }
+            
             StartCoroutine(DestoryCounter());
         }
     }
