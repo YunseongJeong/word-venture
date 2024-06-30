@@ -25,14 +25,17 @@ namespace Map_scene
             ShowStage();
             ShowBattle();
             Clear();
-            MoveMap();
+            SelectStage();
         }
 
-        void MoveMap()
+        public void SelectStage(int stageID, string stageName)
         {
+            StageData.Instance.stageID = stageID;
+            StageData.Instance.stageName = stageName;
+
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                SceneManager.LoadScene("TurnBattleScene");
+                SceneManager.LoadScene("TurnBattleScene") ;
             }
         }
 
