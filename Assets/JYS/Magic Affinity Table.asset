@@ -19,18 +19,22 @@ MonoBehaviour:
       - 0
       - 0
       - 0
+      - 0
     - targets:
       - 0
       - 1
       - 0
       - 0
+      - 0
     - targets:
       - 0
       - 0
       - 1
       - 1
+      - 1
     - targets:
       - 0
       - 0
+      - 1
       - 1
       - 1

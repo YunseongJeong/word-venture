@@ -11,7 +11,7 @@ public class Drop : MonoBehaviour
     public GameObject DroplightningPrefab;
     public GameObject DropholyPrefab;
 
-    public void drop(Deck_Manage.MagicType magicType1, SelectableObject target)
+    public void drop(Deck_Manage.MagicType magicType1, SelectableObject target, MagicAAffinity.MagicAffinityTable magicAffinityTable)
     {
         //GameObject target = GameObject.FindGameObjectWithTag(magicType2.ToString());
 
@@ -41,7 +41,7 @@ public class Drop : MonoBehaviour
             print("tqlf");
             Vector3 InstantiatePos = target.transform.position + new Vector3 (0f ,10f ,0f) ;
             GameObject obj =  Instantiate(prefabToInstantiate, InstantiatePos , Quaternion.identity);
-            obj.GetComponent<SpellObj>().InitSpell(MagicType.Drop, magicType1, target);
+            obj.GetComponent<SpellObj>().InitSpell(MagicType.Drop, magicType1, target, magicAffinityTable);
         }
     }
 }

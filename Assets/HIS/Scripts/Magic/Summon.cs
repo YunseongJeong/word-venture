@@ -13,7 +13,7 @@ public class Summon : MonoBehaviour
     public GameObject SummonlightningPrefab;
     public GameObject SummonHolyPrefab;
 
-    public void summon(MagicType magicType, SelectableObject target)
+    public void summon(MagicType magicType, SelectableObject target, MagicAAffinity.MagicAffinityTable magicAffinityTable)
     {
 
         GameObject prefabToInstantiate = null;
@@ -42,7 +42,7 @@ public class Summon : MonoBehaviour
             //Vector3 instantiatePos = //GetRndPos(target.transform.position + new Vector3(0, -1 * target.transform.position.y, 0), summonRadius);
 
             GameObject obj = Instantiate(prefabToInstantiate, target.transform.position + new Vector3(0, -1 * target.transform.position.y, 0), Quaternion.identity);
-            obj.GetComponent<SpellObj>().InitSpell(MagicType.Summon, magicType, target);
+            obj.GetComponent<SpellObj>().InitSpell(MagicType.Summon, magicType, target, magicAffinityTable);
         }
     }
 

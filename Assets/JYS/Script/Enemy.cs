@@ -74,6 +74,8 @@ namespace Enemy
         protected TMP_Text hpText;
         protected TMP_Text shieldText;
 
+        public Deck_Manage.MagicType enemyType;
+
         [SerializeField] protected int id;
         protected int hp = 1;
         protected int maxHp = 1;
@@ -98,6 +100,7 @@ namespace Enemy
             moveDistance = enemyData.moveDistance;
             attackRange = enemyData.attackRange;
             damage = enemyData.damage;
+            enemyType = enemyData.type;
             UpdateIndicator();
         }
 

@@ -10,6 +10,8 @@ public class CombineZone : MonoBehaviour
     public List<GameObject> spellCards = new List<GameObject>();
     public List<GameObject> magicTypeCards = new List<GameObject>();
 
+    [SerializeField] MagicAAffinity.MagicAffinityTable magicAffinityTable;
+
     public Button activateButton;
     public GameObject Shoot;
     public GameObject Drop;
@@ -61,15 +63,15 @@ public class CombineZone : MonoBehaviour
         if (spellType == Deck_Manage.MagicType.Shoot)
         {
 
-            Shoot.GetComponent<Shoot>().shoot(magicType, target);
+            Shoot.GetComponent<Shoot>().shoot(magicType, target, magicAffinityTable);
         }
         else if (spellType == Deck_Manage.MagicType.Drop)
         {
-            Drop.GetComponent<Drop>().drop(magicType, target);
+            Drop.GetComponent<Drop>().drop(magicType, target, magicAffinityTable);
         }
         else if (spellType == Deck_Manage.MagicType.Summon)
         {
-            Summon.GetComponent<Summon>().summon(magicType, target);
+            Summon.GetComponent<Summon>().summon(magicType, target, magicAffinityTable);
         }
         target = null;
     }

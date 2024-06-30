@@ -9,13 +9,17 @@ public class SpellObj : MonoBehaviour
     Deck_Manage.MagicType spellType;
     Deck_Manage.MagicType magicType;
     SelectableObject target;
+    MagicAAffinity.MagicAffinityTable magicAffinityTable;
 
     public void InitSpell(
         Deck_Manage.MagicType spellType,
         Deck_Manage.MagicType magicType,
-        SelectableObject target)
+        SelectableObject target,
+        MagicAAffinity.MagicAffinityTable magicAffinityTable
+        )
     {
 
+        this.magicAffinityTable = magicAffinityTable;
         this.spellType = spellType;
         this.magicType = magicType;
         this.target = target;
@@ -73,12 +77,12 @@ public class SpellObj : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag(target.gameObject.tag))
         {
             moveVector = Vector3.zero;
             print(collision.gameObject.tag);
             animator.SetTrigger("Hit");
-            collision.GetComponent<Enemy.Enemy>().TakeHit(damage);
+            collision.GetComponent<Enemy.Enemy>().TakeHit(CalculateDamage(damage, collision.gameObject.GetComponent<Enemy.Enemy>().enemyType));
             StartCoroutine(DestoryCounter());
         }
     }
@@ -87,4 +91,21 @@ public class SpellObj : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
+
+    private int CalculateDamage(int damage, Deck_Manage.MagicType enemyMagicType)
+    {
+        float result = damage;
+        if (spellType == Deck_Manage.MagicType.Drop)
+        {
+            result *= 0.7f;
+        } else if(spellType == Deck_Manage.MagicType.Summon)
+        {
+            result *= 0.5f;
+        }
+
+        result *= magicAffinityTable.GetAffinity(spellType, enemyMagicType);
+
+        return ((int)result);
+    }
+
 }
