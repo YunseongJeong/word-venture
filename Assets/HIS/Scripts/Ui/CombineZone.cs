@@ -69,7 +69,7 @@ public class CombineZone : MonoBehaviour
         }
         else if (spellType == Deck_Manage.MagicType.Summon)
         {
-            Summon.GetComponent<Summon>().summon(magicType);
+            Summon.GetComponent<Summon>().summon(magicType, target);
         }
         target = null;
     }

@@ -20,6 +20,12 @@ public class SpellObj : MonoBehaviour
         this.magicType = magicType;
         this.target = target;
 
+        if (this.spellType == Deck_Manage.MagicType.Summon)
+        {
+            StartCoroutine(DestoryCounter());
+            return;
+        }
+
         if (this.spellType == Deck_Manage.MagicType.Drop)
         {
             print("tlqkf");

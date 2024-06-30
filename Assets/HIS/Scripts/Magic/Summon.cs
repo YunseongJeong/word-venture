@@ -13,7 +13,7 @@ public class Summon : MonoBehaviour
     public GameObject SummonlightningPrefab;
     public GameObject SummonHolyPrefab;
 
-    public void summon(MagicType magicType)
+    public void summon(MagicType magicType, SelectableObject target)
     {
 
         GameObject prefabToInstantiate = null;
@@ -39,17 +39,18 @@ public class Summon : MonoBehaviour
 
         if (prefabToInstantiate != null)
         {
-            Vector3 instantiatePos = GetRndPos(player.transform.position, summonRadius);
+            //Vector3 instantiatePos = //GetRndPos(target.transform.position + new Vector3(0, -1 * target.transform.position.y, 0), summonRadius);
 
-            Instantiate(prefabToInstantiate, instantiatePos, Quaternion.identity);
+            GameObject obj = Instantiate(prefabToInstantiate, target.transform.position + new Vector3(0, -1 * target.transform.position.y, 0), Quaternion.identity);
+            obj.GetComponent<SpellObj>().InitSpell(MagicType.Summon, magicType, target);
         }
     }
 
-    private Vector3 GetRndPos(Vector3 center, float radius)
-    {
-        Vector3 randomPos = Random.insideUnitSphere * radius;
-        randomPos.y = Mathf.Abs(randomPos.y); // y축 양수제한
+    //private Vector3 GetRndPos(Vector3 center, float radius)
+    //{
+    //    Vector3 randomPos = Random.insideUnitSphere * radius;
+    //    randomPos.y = Mathf.Abs(randomPos.y); // y축 양수제한
         
-        return center + randomPos;
-    }
+    //    return center + randomPos;
+    //}
 }
