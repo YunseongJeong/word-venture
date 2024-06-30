@@ -9,6 +9,7 @@ public class Drop : MonoBehaviour
     public GameObject DropicePrefab;
     public GameObject DroprockPrefab;
     public GameObject DroplightningPrefab;
+    public GameObject DropholyPrefab;
 
     public void drop(Deck_Manage.MagicType magicType1, SelectableObject target)
     {
@@ -29,6 +30,9 @@ public class Drop : MonoBehaviour
                 break;
             case Deck_Manage.MagicType.Lightning:
                 prefabToInstantiate = DroplightningPrefab;
+                break;
+            case Deck_Manage.MagicType.Holy:
+                prefabToInstantiate = DropholyPrefab;
                 break;
         }
 

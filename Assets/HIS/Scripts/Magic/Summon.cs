@@ -11,6 +11,7 @@ public class Summon : MonoBehaviour
     public GameObject SummonicePrefab;
     public GameObject SummonrockPrefab;
     public GameObject SummonlightningPrefab;
+    public GameObject SummonHolyPrefab;
 
     public void summon(MagicType magicType)
     {
@@ -30,6 +31,9 @@ public class Summon : MonoBehaviour
                 break;
             case MagicType.Lightning:
                 prefabToInstantiate = SummonlightningPrefab;
+                break;
+            case MagicType.Holy:
+                prefabToInstantiate = SummonHolyPrefab;
                 break;
         }
 

@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
     public GameObject ShooticePrefab;
     public GameObject ShootrockPrefab;
     public GameObject ShootlightningPrefab;
+    public GameObject ShootHolyPrefab;
 
     public void shoot(MagicType magicType1, SelectableObject target)
     {
@@ -28,6 +29,9 @@ public class Shoot : MonoBehaviour
                 break;
             case MagicType.Lightning:
                 prefabToInstantiate = ShootlightningPrefab;
+                break;
+            case MagicType.Holy:
+                prefabToInstantiate = ShootHolyPrefab;
                 break;
         }
 
