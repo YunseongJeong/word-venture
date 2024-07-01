@@ -47,7 +47,7 @@ public class StoryController : MonoBehaviour
             SwitchBackground(scriptContainer.GetScriptData(i).background);
             chatWindowController.UpdateChatStream(scriptContainer.GetScriptData(i).name, scriptContainer.GetScriptData(i).text);
 
-            yield return new WaitForSeconds(scriptContainer.GetScriptData(i).text.Length * 0.1f);
+            yield return new WaitForSeconds(scriptContainer.GetScriptData(i).text.Length * 0.03f);
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         }
 
