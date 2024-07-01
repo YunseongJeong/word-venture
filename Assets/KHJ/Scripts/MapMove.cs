@@ -4,6 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Map_scene
 {
@@ -16,7 +17,7 @@ namespace Map_scene
         [SerializeField] GameObject battle2;
         [SerializeField] GameObject battle3;
         [SerializeField] GameObject boss;
-        [SerializeField] Text Stage;
+        [SerializeField] TextMeshProUGUI Stage;
         [SerializeField] Sprite Stage1;
         [SerializeField] Sprite Stage2;
         [SerializeField] Sprite Stage3;
@@ -32,6 +33,7 @@ namespace Map_scene
         void Update()
         {
             CharacterMove();
+            ShowStage();
             ShowBattle(StagePosition);
             Clear();
         }
@@ -99,6 +101,11 @@ namespace Map_scene
             {
                 SelectStage(position);
             }
+        }
+
+        void ShowStage()
+        {
+            Stage.text = "Stage : " + StagePosition;
         }
 
         public void SelectStage(int stagePosition)
