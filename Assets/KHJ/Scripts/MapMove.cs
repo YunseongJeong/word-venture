@@ -27,18 +27,8 @@ namespace Map_scene
         void Update()
         {
             CharacterMove();
-            ShowStage();
-            ShowBattle(StagePosition);
+            ShowBattle();
             Clear();
-            MoveMap();
-        }
-
-        void MoveMap()
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                SceneManager.LoadScene("TurnBattleScene");
-            }
         }
 
         void CharacterMove()
@@ -47,69 +37,69 @@ namespace Map_scene
             {
                 if (Input.GetKeyDown(KeyCode.RightArrow) && StagePosition >= 1)
                 {
-                    character.transform.DOMove(battle1.transform.position,1);
+                    character.transform.DOMove(battle1.transform.position, 1);
                     position++;
                 }
             }
-
-            else if(position == 1)
+            else if (position == 1)
             {
                 if (Input.GetKeyDown(KeyCode.RightArrow) && StagePosition >= 2)
                 {
-                    character.transform.DOMove(battle2.transform.position,1);
+                    character.transform.DOMove(battle2.transform.position, 1);
                     position++;
                 }
-
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    character.transform.DOMove(village.transform.position,1);
+                    character.transform.DOMove(village.transform.position, 1);
                     position--;
                 }
             }
-
-            else if(position == 2)
+            else if (position == 2)
             {
                 if (Input.GetKeyDown(KeyCode.RightArrow) && StagePosition >= 3)
                 {
-                    character.transform.DOMove(battle3.transform.position,1);
+                    character.transform.DOMove(battle3.transform.position, 1);
                     position++;
                 }
-
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    character.transform.DOMove(battle1.transform.position,1);
+                    character.transform.DOMove(battle1.transform.position, 1);
                     position--;
                 }
             }
-
-            else if(position == 3)
+            else if (position == 3)
             {
                 if (Input.GetKeyDown(KeyCode.RightArrow) && StagePosition >= 4)
                 {
-                    character.transform.DOMove(boss.transform.position,1);
+                    character.transform.DOMove(boss.transform.position, 1);
                     position++;
                 }
-
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    character.transform.DOMove(battle2.transform.position,1);
+                    character.transform.DOMove(battle2.transform.position, 1);
                     position--;
                 }
             }
-
-            else if(position == 4)
+            else if (position == 4)
             {
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    character.transform.DOMove(battle3.transform.position,1);
+                    character.transform.DOMove(battle3.transform.position, 1);
                     position--;
                 }
             }
+
+            // 스테이지 선택 시 씬 로드
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                SelectStage(position);
+            }
         }
 
-        void ShowStage()
+        public void SelectStage(int stagePosition)
         {
-            Stage.text = "Stage : " + position;
+            StageDataSingleton.Instance.StagePosition = stagePosition;
+            SceneManager.LoadScene("3.2.Test_06.30");
         }
 
         void InitShowBattles()
@@ -124,7 +114,7 @@ namespace Map_scene
 
         void ShowBattle(int StagePosition)
         {
-            switch(StagePosition)
+            switch (StagePosition)
             {
                 case 1:
                     battle1.GetComponent<SpriteRenderer>().sortingOrder = 2;
@@ -159,12 +149,10 @@ namespace Map_scene
 
         void Clear()
         {
-            if(Input.GetKeyDown(KeyCode.Space) && StagePosition <= 5)
+            if (Input.GetKeyDown(KeyCode.Space) && StagePosition <= 5)
             {
                 StagePosition++;
             }
         }
-
     }
 }
-
