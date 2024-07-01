@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: d49c8259ff253704583adee6a29d45cb, type: 3}
   m_Name: WordSO
-  m_EditorClassIdentifier: Assembly-CSharp:Deck_Manage:WordSO
+  m_EditorClassIdentifier: 
   words:
   - name: Shoot
     percent: 10
