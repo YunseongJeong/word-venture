@@ -25,13 +25,11 @@ namespace Map_scene
             ShowStage();
             ShowBattle();
             Clear();
-            SelectStage();
         }
 
-        public void SelectStage(int stageID, string stageName)
+        public void SelectStage(int StagePosition)
         {
-            StageData.Instance.stageID = stageID;
-            StageData.Instance.stageName = stageName;
+            StageData.Instance.StagePosition = StagePosition ;
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
