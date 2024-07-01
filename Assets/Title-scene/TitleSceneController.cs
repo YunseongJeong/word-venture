@@ -17,9 +17,10 @@ public class TitleSceneManager : MonoBehaviour
     {
         if (saveLoadController.LoadPlayData() == -1)
         {
-            SceneManager.LoadScene("StoryScene");
             Map_scene.MapMove.StagePosition = 0;
             saveLoadController.SavePlayData();
+            SceneManager.LoadScene("StoryScene");
+            
         } else
         {
             SceneManager.LoadScene("Map_scene");
