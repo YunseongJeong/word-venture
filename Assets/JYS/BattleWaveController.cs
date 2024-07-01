@@ -59,6 +59,7 @@ public class BattleWaveController : MonoBehaviour
             StartWave(wave);
         else
         {
+            Map_scene.MapMove.StagePosition++;
             SceneManager.LoadScene("GameClearScene");
         }
     }
