@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-    public List<StageData> stageDataList; // 모든 스테이지 데이터 목록
-    private StageData currentStageData; // 현재 스테이지 데이터
+    public List<StageData> stageDataList;
+    private StageData currentStageData; 
     private BattleWaveController battleWaveController;
     void Start()
     {
@@ -30,10 +30,8 @@ public class StageManager : MonoBehaviour
 
     void SetupBattle(StageData stageData)
     {
-        // 배경 설정
         SetBackground(stageData.background);
 
-        // 몬스터 웨이브 설정
         battleWaveController.battleScript = stageData.waveData.enemyWaves[0];
         battleWaveController.Start1();
     }

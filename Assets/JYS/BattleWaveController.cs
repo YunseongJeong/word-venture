@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class BattleWaveController : MonoBehaviour
 {
-    [SerializeField] public BattleScriptContainer battleScript;
+    public BattleScriptContainer battleScript;
     Enemy.EnemyPoolController ememyPool;
     List<GameObject> activatedEnemies = new List<GameObject>();
     int wave = 0;
