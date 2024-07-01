@@ -65,7 +65,7 @@ namespace Deck_Manage {
 
         void Start()
         {
-            Map_scene.MapMove.StagePosition = 0;
+            //Map_scene.MapMove.StagePosition = 0;
             WordOS_state();
             SetupWordBuffer();
         }
