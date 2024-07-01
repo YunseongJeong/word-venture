@@ -84,6 +84,9 @@ public class CombineZone : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
+        Enemy.Player.PlayerInt().AttackAnima();
+        yield return new WaitForSeconds(0.5f);
+
         if (spellType == Deck_Manage.MagicType.Shoot)
         {
 
@@ -98,6 +101,7 @@ public class CombineZone : MonoBehaviour
             Summon.GetComponent<Summon>().summon(magicType, target, magicAffinityTable);
         }
         SetAllSelectable(false);
+        
         target = null;
     }
 
