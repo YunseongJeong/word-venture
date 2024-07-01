@@ -34,4 +34,9 @@ public class TitleSceneManager : MonoBehaviour
         SaveLoadController.Instance.InitPlayData();
     }
 
+
+    public void QuitGame()
+    {
+        SaveLoadController.Instance.SavePlayData();
+    }
 }
