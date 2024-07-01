@@ -27,7 +27,7 @@ namespace Map_scene
         void Update()
         {
             CharacterMove();
-            ShowBattle();
+            ShowBattle(StagePosition);
             Clear();
         }
 
