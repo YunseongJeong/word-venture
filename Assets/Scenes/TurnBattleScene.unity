@@ -2085,10 +2085,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageDataList:
-  - {fileID: 0}
-  - {fileID: 11400000, guid: d9e6dda101894c341bc1fcf5322dffb0, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: da316eaa41faf6b4f85295198fa9c568, type: 2}
+  - {fileID: 11400000, guid: a4136a57bf5d82549b1cd92ecb8af01c, type: 2}
+  - {fileID: 11400000, guid: afa5de4f03a9fb646ae3c5452db3bf95, type: 2}
+  - {fileID: 11400000, guid: e631eab2540b0ba49838230d1718e406, type: 2}
 --- !u!1 &1935962192
 GameObject:
   m_ObjectHideFlags: 0

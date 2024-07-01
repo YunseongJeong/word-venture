@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bed155aa01b47504da9d2a3e0fe05538, type: 3}
-  m_Name: StageData
+  m_Name: BossStage
   m_EditorClassIdentifier: Assembly-CSharp::StageData
-  stageID: 1
+  stageID: 4
   stageName: 
-  background: {fileID: 21300000, guid: 34fbc3971651b1948bf3a666296c850d, type: 3}
+  background: {fileID: 21300000, guid: 9d158541f1bf73847a2e9f86172af2ba, type: 3}
   waveData:
     enemyWaves:
     - {fileID: 11400000, guid: a11430471d4f246c09746290db9f3fe9, type: 2}

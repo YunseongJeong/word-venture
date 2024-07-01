@@ -104,7 +104,7 @@ namespace Map_scene
         public void SelectStage(int stagePosition)
         {
             StageDataSingleton.Instance.StagePosition = stagePosition;
-            SceneManager.LoadScene("3.2.Test_06.30");
+            SceneManager.LoadScene("TurnBattleScene");
         }
 
         void InitShowBattles()
