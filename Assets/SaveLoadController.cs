@@ -44,6 +44,10 @@ public class SaveLoadController : MonoBehaviour
     public void SavePlayData()
     {
         PlayerPrefs.SetInt("StagePosition", Map_scene.MapMove.StagePosition);
+    }
+
+    public void QuitGame()
+    {
         #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
         #else
@@ -54,7 +58,6 @@ public class SaveLoadController : MonoBehaviour
     public int LoadPlayData()
     {
         Map_scene.MapMove.StagePosition = PlayerPrefs.GetInt("StagePosition", -1);
-        print(Map_scene.MapMove.StagePosition);
         return Map_scene.MapMove.StagePosition;
     }
 
