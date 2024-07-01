@@ -38,5 +38,6 @@ public class TitleSceneManager : MonoBehaviour
     public void QuitGame()
     {
         SaveLoadController.Instance.SavePlayData();
+        SaveLoadController.Instance.QuitGame();
     }
 }
