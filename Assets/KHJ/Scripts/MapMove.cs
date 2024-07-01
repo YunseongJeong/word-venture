@@ -120,8 +120,7 @@ namespace Map_scene
             {
                 ShowBattle(i);
             }
-            
-            
+            WordPosition(StagePosition);
         }
 
         void ShowBattle(int StagePosition)
@@ -142,6 +141,29 @@ namespace Map_scene
                     break;
                 case 5:
                     GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = Stage4;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        void WordPosition(int StagePosition)
+        {
+            switch (StagePosition)
+            {
+                case 1:
+                    break;
+                case 2:
+                    character.transform.position = battle1.transform.position;
+                    break;
+                case 3:
+                    character.transform.position = battle2.transform.position;
+                    break;
+                case 4:
+                    character.transform.position = battle3.transform.position;
+                    break;
+                case 5:
+                    character.transform.position = battle3.transform.position;
                     break;
                 default:
                     break;
