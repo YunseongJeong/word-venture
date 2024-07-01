@@ -44,6 +44,11 @@ public class SaveLoadController : MonoBehaviour
     public void SavePlayData()
     {
         PlayerPrefs.SetInt("StagePosition", Map_scene.MapMove.StagePosition);
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
 
     public int LoadPlayData()
