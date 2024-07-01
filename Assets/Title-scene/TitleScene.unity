@@ -409,7 +409,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1646831878}
         m_TargetAssemblyTypeName: SaveLoadController, Assembly-CSharp
-        m_MethodName: SavePlayData
+        m_MethodName: InitPlayData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
