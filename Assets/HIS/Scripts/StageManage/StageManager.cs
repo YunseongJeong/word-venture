@@ -7,13 +7,14 @@ public class StageManager : MonoBehaviour
     public List<StageData> stageDataList;
     private StageData currentStageData; 
     private BattleWaveController battleWaveController;
+    [SerializeField] GameObject rainyBackground;
     void Start()
     {
         battleWaveController = FindObjectOfType<BattleWaveController>();
 
         int stagePosition = StageDataSingleton.Instance.StagePosition;
         LoadStage(stagePosition);
-        SetupBattle(currentStageData);
+        SetupBattle(currentStageData, stagePosition);
     }
 
     void LoadStage(int stagePosition)
@@ -28,17 +29,29 @@ public class StageManager : MonoBehaviour
         }
     }
 
-    void SetupBattle(StageData stageData)
+    void SetupBattle(StageData stageData, int stagePosition)
     {
-        SetBackground(stageData.background);
+        SetBackground(stageData.background, stagePosition);
 
         battleWaveController.battleScript = stageData.waveData.enemyWaves[0];
         battleWaveController.Start1();
     }
 
-    void SetBackground(Sprite background)
+    void SetBackground(Sprite background, int stagePosition)
     {
         GameObject backgroundObject = GameObject.Find("PlainBackground");
+
+        if (stagePosition == 3)
+        {
+            backgroundObject.SetActive(false);
+            rainyBackground.SetActive(true);
+        }else
+        {
+            backgroundObject.SetActive(true);
+            rainyBackground.SetActive(false);
+        }
+
+        
         if (backgroundObject != null)
         {
             SpriteRenderer renderer = backgroundObject.GetComponent<SpriteRenderer>();
