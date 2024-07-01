@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Map_scene
@@ -18,12 +19,26 @@ namespace Map_scene
         int position = 0;
         public static int StagePosition = 0;
 
+        private void Start()
+        {
+            InitShowBattles();
+        }
+
         void Update()
         {
             CharacterMove();
             ShowStage();
-            ShowBattle();
+            ShowBattle(StagePosition);
             Clear();
+            MoveMap();
+        }
+
+        void MoveMap()
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                SceneManager.LoadScene("TurnBattleScene");
+            }
         }
 
         void CharacterMove()
@@ -97,7 +112,17 @@ namespace Map_scene
             Stage.text = "Stage : " + position;
         }
 
-        void ShowBattle()
+        void InitShowBattles()
+        {
+            for (int i = 0; i < StagePosition; i++)
+            {
+                ShowBattle(i);
+            }
+            
+            
+        }
+
+        void ShowBattle(int StagePosition)
         {
             switch(StagePosition)
             {

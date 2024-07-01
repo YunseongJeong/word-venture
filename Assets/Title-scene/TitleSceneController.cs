@@ -5,8 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class TitleSceneManager : MonoBehaviour
 {
-    private void LoadMapScene()
+    SaveLoadController saveLoadController;
+
+
+    private void Start()
     {
-        //SceneManager.LoadScene();
+        saveLoadController = GameObject.Find("SaveLoadController").GetComponent<SaveLoadController>();
+    }
+
+    public void LoadStoryScene()
+    {
+        if (saveLoadController.LoadPlayData() == -1)
+        {
+            SceneManager.LoadScene("StoryScene");
+            Map_scene.MapMove.StagePosition = 0;
+            saveLoadController.SavePlayData();
+        } else
+        {
+            SceneManager.LoadScene("Map_scene");
+        }
+
+        
     }
 }
