@@ -55,4 +55,9 @@ public class SaveLoadController : MonoBehaviour
     {
         SavePlayData();
     }
+
+    public void InitPlayData()
+    {
+        PlayerPrefs.SetInt("StagePosition", -1);
+    }
 }
