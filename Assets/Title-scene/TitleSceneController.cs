@@ -28,4 +28,10 @@ public class TitleSceneManager : MonoBehaviour
 
         
     }
+
+    public void InitPlayerData()
+    {
+        SaveLoadController.Instance.InitPlayData();
+    }
+
 }
