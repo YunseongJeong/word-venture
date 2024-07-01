@@ -10,12 +10,17 @@ namespace Map_scene
     public class MapMove : MonoBehaviour
     {
         [SerializeField] GameObject character;
+        [SerializeField] GameObject Background;
         [SerializeField] GameObject village;
         [SerializeField] GameObject battle1;
         [SerializeField] GameObject battle2;
         [SerializeField] GameObject battle3;
         [SerializeField] GameObject boss;
         [SerializeField] Text Stage;
+        [SerializeField] Sprite Stage1;
+        [SerializeField] Sprite Stage2;
+        [SerializeField] Sprite Stage3;
+        [SerializeField] Sprite Stage4;
         int position = 0;
         public static int StagePosition;
 
@@ -127,30 +132,19 @@ namespace Map_scene
             switch(StagePosition)
             {
                 case 1:
-                    battle1.GetComponent<SpriteRenderer>().sortingOrder = 2;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = Stage1;
                     break;
                 case 2:
-                    battle2.GetComponent<SpriteRenderer>().sortingOrder = 2;
-                    Color color1 = battle1.GetComponent<SpriteRenderer>().color;
-                    color1.a = 0.3f;
-                    battle1.GetComponent<SpriteRenderer>().color = color1;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = Stage2;
                     break;
                 case 3:
-                    battle3.GetComponent<SpriteRenderer>().sortingOrder = 2;
-                    Color color2 = battle2.GetComponent<SpriteRenderer>().color;
-                    color2.a = 0.3f;
-                    battle2.GetComponent<SpriteRenderer>().color = color2;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = Stage3;
                     break;
                 case 4:
-                    boss.GetComponent<SpriteRenderer>().sortingOrder = 2;
-                    Color color3 = battle3.GetComponent<SpriteRenderer>().color;
-                    color3.a = 0.3f;
-                    battle3.GetComponent<SpriteRenderer>().color = color3;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = Stage4;
                     break;
                 case 5:
-                    Color color4 = boss.GetComponent<SpriteRenderer>().color;
-                    color4.a = 0.3f;
-                    boss.GetComponent<SpriteRenderer>().color = color4;
+                    GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = Stage4;
                     break;
                 default:
                     break;
