@@ -17,20 +17,20 @@ MonoBehaviour:
     percent: 10
     tag: Spell
     magicType: 0
-  - name: Drop
-    percent: 5
-    tag: Spell
-    magicType: 2
   - name: Summon
-    percent: 5
+    percent: 0
     tag: Spell
     magicType: 1
+  - name: Drop
+    percent: 0
+    tag: Spell
+    magicType: 2
   - name: Fire
     percent: 8
     tag: MagicType
     magicType: 4
   - name: Rock
-    percent: 8
+    percent: 0
     tag: MagicType
     magicType: 6
   - name: Ice
