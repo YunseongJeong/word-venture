@@ -61,6 +61,5 @@ public class SaveLoadController : MonoBehaviour
     public void InitPlayData()
     {
         PlayerPrefs.SetInt("StagePosition", -1);
-        print(PlayerPrefs.GetInt("StagePosition", -1));
     }
 }
