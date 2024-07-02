@@ -7,6 +7,8 @@ using static BattleSystem.Player;
 
 public class CombineZone : MonoBehaviour
 {
+    [SerializeField] AudioSource magicEffectSource;
+
     public List<GameObject> spellCards = new List<GameObject>();
     public List<GameObject> magicTypeCards = new List<GameObject>();
 
@@ -86,7 +88,7 @@ public class CombineZone : MonoBehaviour
 
         Enemy.Player.PlayerInt().AttackAnima();
         yield return new WaitForSeconds(0.5f);
-
+        magicEffectSource.Play();
         if (spellType == Deck_Manage.MagicType.Shoot)
         {
 
