@@ -11,15 +11,19 @@ public class StoryController : MonoBehaviour
 
     [SerializeField] List<GameObject> backgorunds = new List<GameObject>();
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip badMood;
 
     void Start()
     {
         InitBackground();
         StartCoroutine(StoryTelling());
+        
     }
 
     private void InitBackground()
     {
+
         backgorunds[0].SetActive(true);
         for (int i = 1; i < backgorunds.Count; i++)
         {
@@ -34,8 +38,17 @@ public class StoryController : MonoBehaviour
             if (i == id)
             {
                 backgorunds[i].SetActive(true);
-            } else
+            }
+            else
+            {
                 backgorunds[i].SetActive(false);
+            }
+                
+        }
+        if (id == 1)
+        {
+            audioSource.clip = badMood;
+            audioSource.Play();
         }
     }
 
