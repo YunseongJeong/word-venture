@@ -1531,9 +1531,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 855569417}
-        m_TargetAssemblyTypeName: TurnBattle.TurnBattleDebugButton, Assembly-CSharp
-        m_MethodName: EndPlayerTurn
+      - m_Target: {fileID: 1888851174}
+        m_TargetAssemblyTypeName: TurnBattle.TurnBattleSystem, Assembly-CSharp
+        m_MethodName: TurnEndButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

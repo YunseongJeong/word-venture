@@ -15,7 +15,6 @@ public class BattleWaveController : MonoBehaviour
     {
         ememyPool = gameObject.GetComponent<Enemy.EnemyPoolController>();
         StartWave(wave);
-        TurnBattleSystem.Instance.ChangeTurn(TurnBattleSystem.EnemyTurn);
     }
 
     private void StartWave(int wave)
