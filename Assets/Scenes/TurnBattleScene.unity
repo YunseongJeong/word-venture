@@ -2218,7 +2218,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: afa5de4f03a9fb646ae3c5452db3bf95, type: 2}
   - {fileID: 11400000, guid: e631eab2540b0ba49838230d1718e406, type: 2}
   audioSource: {fileID: 1806486768}
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 2ccc481475ec7e54c83a6db01256dace, type: 3}
+  - {fileID: 8300000, guid: f3775a89bfe330d4aa0739f3da64aacd, type: 3}
+  - {fileID: 8300000, guid: 134ac98df77a4554d812339ff872836f, type: 3}
+  - {fileID: 8300000, guid: 3ae6ac071f570bc4ca7bcfbc3beb5d1a, type: 3}
+  - {fileID: 8300000, guid: f4e2ef7296b4bcb4d90b242b913d1516, type: 3}
   rainyBackground: {fileID: 1992185634}
 --- !u!1 &1935962192
 GameObject:
