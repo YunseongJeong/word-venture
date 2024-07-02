@@ -60,7 +60,7 @@ namespace Enemy
 
     public class Enemy : MonoBehaviour
     { 
-        protected Animator animator;
+        protected SlimeAnimator animator;
 
         protected TMP_Text hpText;
 
@@ -127,6 +127,7 @@ namespace Enemy
 
         public IEnumerator MoveDistance(float distance)
         {
+            animator.MoveStart();
             float moveSpeed = moveDistance / turnTime;
             float movedDistance = 0;
             while (movedDistance <= distance)
@@ -147,7 +148,7 @@ namespace Enemy
 
         protected virtual void Start()
         {
-            animator = GetComponent<Animator>();
+            animator = GetComponent<SlimeAnimator>();
             turnTime = TurnBattle.TurnBattleSystem.turnTime;
         }
 
@@ -171,28 +172,34 @@ namespace Enemy
         }
 
         public void Move(int direction, float moveStep) {
+            print("tlqkf");
             FaceToDirection(direction);
             tempVector3 = transform.position;
             tempVector3.x = tempVector3.x + moveStep * direction;
             transform.position = tempVector3;
-            animator.SetBool("isMoving", true);
+            
         }
 
         protected void StopMove()
         {
-            animator.SetBool("isMoving", false);
+            animator.MoveEnd();
         }
 
         virtual public void Attack(float distanceToPlayer)
         {
-            animator.SetTrigger("Attack");
+            print("tlqkf");
+            animator.Attack();
         }
 
         protected void Death()
         {
-            animator.SetTrigger("Death");
+            animator.Death();
+            StartCoroutine(DeathCounter());
+        }
+        IEnumerator DeathCounter()
+        {
+            yield return new WaitForSeconds(0.25f);
             gameObject.SetActive(false);
-            
         }
 
         public void TakeHit(int damage)
@@ -204,7 +211,7 @@ namespace Enemy
                 return;
             }
             else {
-                animator.SetTrigger("TakeHit");
+                animator.TakeHit();
                 UpdateIndicator();
             }
             
