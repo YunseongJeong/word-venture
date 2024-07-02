@@ -42,7 +42,7 @@ namespace Map_scene
         {
             if (position == 0)
             {
-                if (Input.GetKeyDown(KeyCode.RightArrow) && StagePosition >= 1)
+                if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow)) && StagePosition >= 1)
                 {
                     character.transform.DOMove(battle1.transform.position, 1);
                     position++;
@@ -55,7 +55,7 @@ namespace Map_scene
                     character.transform.DOMove(battle2.transform.position, 1);
                     position++;
                 }
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     character.transform.DOMove(village.transform.position, 1);
                     position--;
@@ -63,7 +63,7 @@ namespace Map_scene
             }
             else if (position == 2)
             {
-                if (Input.GetKeyDown(KeyCode.RightArrow) && StagePosition >= 3)
+                if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow)) && StagePosition >= 3)
                 {
                     character.transform.DOMove(battle3.transform.position, 1);
                     position++;
@@ -81,7 +81,7 @@ namespace Map_scene
                     character.transform.DOMove(boss.transform.position, 1);
                     position++;
                 }
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     character.transform.DOMove(battle2.transform.position, 1);
                     position--;
