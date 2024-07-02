@@ -7,6 +7,10 @@ public class StageManager : MonoBehaviour
     public List<StageData> stageDataList;
     private StageData currentStageData; 
     private BattleWaveController battleWaveController;
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] List<AudioClip> audioClips;
+
     [SerializeField] GameObject rainyBackground;
     void Start()
     {
@@ -40,7 +44,8 @@ public class StageManager : MonoBehaviour
     void SetBackground(Sprite background, int stagePosition)
     {
         GameObject backgroundObject = GameObject.Find("PlainBackground");
-
+        audioSource.clip = audioClips[stagePosition];
+        audioSource.Play();
         if (stagePosition == 3)
         {
             backgroundObject.SetActive(false);
