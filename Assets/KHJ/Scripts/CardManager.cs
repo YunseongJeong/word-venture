@@ -134,6 +134,9 @@ namespace Deck_Manage {
                 //targetCard.originPRS = new PRS(Vector3.zero, Util.QI, new Vector3(1.896733f, 2.910432f, 1));
                 targetCard.MoveTransform(targetCard.originPRS,true,0.7f);
             }
+
+            CombineZone.Instance.spellCards.Clear();
+            CombineZone.Instance.magicTypeCards.Clear(); 
         }
 
         List<PRS> RoundAlignment(Transform Left, Transform Right, int objCount, float height, Vector3 scale)
@@ -254,6 +257,8 @@ namespace Deck_Manage {
             }
             else
             {
+                CombineZone.Instance.spellCards.Clear();
+                CombineZone.Instance.magicTypeCards.Clear();
                 selectCard.MoveTransform(selectCard.originPRS, false);
             }
         }
