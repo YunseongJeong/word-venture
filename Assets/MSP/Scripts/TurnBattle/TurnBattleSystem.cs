@@ -35,6 +35,7 @@ namespace TurnBattle
             //Debug.Log("Player Turn Start!");
             //Draw Cards.
             TurnBattleSystem.Instance.cardManager.AddCard();
+            TurnBattleSystem.Instance.cardManager.AddCard();
         }
         public override void OnEnd() //When Player Hit End button...
         {

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StageData
   stageID: 4
   stageName: 
-  background: {fileID: 21300000, guid: 9d158541f1bf73847a2e9f86172af2ba, type: 3}
+  background: {fileID: 21300000, guid: 8eab9287a556d4cba85b2e2409af404b, type: 3}
   waveData:
     enemyWaves:
     - {fileID: 11400000, guid: 73fc85083cb86a343b30ba4d96ff7fe4, type: 2}
