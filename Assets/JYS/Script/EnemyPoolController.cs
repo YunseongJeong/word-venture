@@ -39,7 +39,7 @@ namespace Enemy
             
             for (int i = 0; i < num; i++)
             {
-                if(enemyData.id/3 == stagePosition)
+                if(enemyData.id/3 == stagePosition || (stagePosition==4 && enemyData.id>11))
                 {
                     GameObject temp = Instantiate(enemyData.prefab, new Vector3(10, 10, 0), Quaternion.identity);
                     temp.GetComponent<Enemy>().InitEnemyData(enemyData);
