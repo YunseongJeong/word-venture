@@ -7,6 +7,7 @@ using static BattleSystem.Player;
 
 public class CombineZone : MonoBehaviour
 {
+    public static CombineZone Instance;
     public List<GameObject> spellCards = new List<GameObject>();
     public List<GameObject> magicTypeCards = new List<GameObject>();
 
@@ -39,9 +40,14 @@ public class CombineZone : MonoBehaviour
     public GameObject Drop;
     public GameObject Summon;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         activateButton.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void AddCard(GameObject card)
