@@ -172,7 +172,6 @@ namespace Enemy
         }
 
         public void Move(int direction, float moveStep) {
-            print("tlqkf");
             FaceToDirection(direction);
             tempVector3 = transform.position;
             tempVector3.x = tempVector3.x + moveStep * direction;
@@ -187,7 +186,6 @@ namespace Enemy
 
         virtual public void Attack(float distanceToPlayer)
         {
-            print("tlqkf");
             animator.Attack();
         }
 

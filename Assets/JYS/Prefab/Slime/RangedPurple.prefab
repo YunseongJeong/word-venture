@@ -191,7 +191,7 @@ MonoBehaviour:
   id: 0
   moveDistance: 5
   attackRange: 3
-  fireShoot: {fileID: 0}
+  fireShoot: {fileID: 551846140306559048, guid: 737d38e54a152473997472dfcf72b0d3, type: 3}
 --- !u!58 &4675602634531947859
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -310,7 +310,7 @@ MonoBehaviour:
   id: 0
   moveDistance: 5
   attackRange: 3
-  fireShoot: {fileID: 0}
+  fireShoot: {fileID: 6370464029130437038, guid: 487d8c5237e134749828b83db420a82f, type: 3}
 --- !u!212 &3586787041516410200
 SpriteRenderer:
   m_ObjectHideFlags: 0
