@@ -17,4 +17,4 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 0c7860b01c549e643978c99b85b90efe, type: 3}
   waveData:
     enemyWaves:
-    - {fileID: 11400000, guid: a11430471d4f246c09746290db9f3fe9, type: 2}
+    - {fileID: 11400000, guid: 3bdbd0fa05dc7b54bacca0e1e4146be7, type: 2}
