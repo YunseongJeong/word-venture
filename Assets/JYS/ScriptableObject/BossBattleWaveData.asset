@@ -15,21 +15,21 @@ MonoBehaviour:
   battleWaveDatas:
   - enemySpawnDatasInWave:
     - SpawnPositionX: 7
-      EnemyId: 2
+      EnemyId: 12
     - SpawnPositionX: 6
-      EnemyId: 5
+      EnemyId: 13
   - enemySpawnDatasInWave:
     - SpawnPositionX: 7
-      EnemyId: 8
+      EnemyId: 12
     - SpawnPositionX: 6
-      EnemyId: 11
+      EnemyId: 13
   - enemySpawnDatasInWave:
     - SpawnPositionX: 7
-      EnemyId: 11
+      EnemyId: 12
     - SpawnPositionX: 6
-      EnemyId: 2
-    - SpawnPositionX: 5
-      EnemyId: 8
-  - enemySpawnDatasInWave:
+      EnemyId: 13
     - SpawnPositionX: 7
       EnemyId: 14
+  - enemySpawnDatasInWave:
+    - SpawnPositionX: 7
+      EnemyId: 15
