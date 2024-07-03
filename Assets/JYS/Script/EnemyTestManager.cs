@@ -50,19 +50,19 @@ namespace Enemy
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                PlayTurn();
-            } else if (Input.GetKeyDown(KeyCode.Return))
-            {
-                SpawnEnemies();
-            } else if (Input.GetKeyDown(KeyCode.D))
-            {
-                foreach (Enemy enemy in enemies)
-                {
-                    enemy.TakeHit(1);
-                }
-            }
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    PlayTurn();
+            //} else if (Input.GetKeyDown(KeyCode.Return))
+            //{
+            //    SpawnEnemies();
+            //} else if (Input.GetKeyDown(KeyCode.D))
+            //{
+            //    foreach (Enemy enemy in enemies)
+            //    {
+            //        enemy.TakeHit(1);
+            //    }
+            //}
         }
 
         //MSP

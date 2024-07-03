@@ -35,7 +35,7 @@ namespace Map_scene
             CharacterMove();
             ShowStage();
             ShowBattle(StagePosition);
-            Clear();
+            //Clear();
         }
 
         void CharacterMove()

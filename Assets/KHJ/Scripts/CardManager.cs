@@ -72,15 +72,15 @@ namespace Deck_Manage {
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.U) && Map_scene.MapMove.StagePosition <= 4)
-            {
-                Map_scene.MapMove.StagePosition++;
-                WordOS_state();
-                SetupWordBuffer();
-            }
+            //if (Input.GetKeyDown(KeyCode.U) && Map_scene.MapMove.StagePosition <= 4)
+            //{
+            //    Map_scene.MapMove.StagePosition++;
+            //    WordOS_state();
+            //    SetupWordBuffer();
+            //}
 
-            if (Input.GetKeyDown(KeyCode.Space) && !isMyCardDrag)
-                AddCard();
+            //if (Input.GetKeyDown(KeyCode.Space) && !isMyCardDrag)
+            //    AddCard();
 
             DetectCardArea();
             if (isMyCardDrag)
