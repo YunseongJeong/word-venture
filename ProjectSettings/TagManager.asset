@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spell
+  - MagicTypes
+  - Target
+  - Enemy
+  - MagicType
+  - Me
+  - Ally
+  - Attack
+  - Heal
   layers:
   - Default
   - TransparentFX
@@ -11,10 +20,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - CardArea
+  - PushArea1
+  - PushArea2
+  - PushArea3
   - 
   - 
   - 
@@ -40,4 +49,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Card
+    uniqueID: 3699078731
     locked: 0
