@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8276828989004262396}
-  - component: {fileID: 3099208378473591704}
+  - component: {fileID: 3579032518965473139}
   - component: {fileID: 71848356304865568}
   - component: {fileID: 1128718427560426993}
   - component: {fileID: 3024229752439385879}
@@ -38,7 +38,7 @@ Transform:
   - {fileID: 7075553962748477989}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3099208378473591704
+--- !u!114 &3579032518965473139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,14 +47,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 431560386325625679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4156a9bbefd7c4871ab212914637632e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6236bcb16d6bf4f009ed4345e068492e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 0
   id: 0
   moveDistance: 5
   attackRange: 3
-  fireShoot: {fileID: 4235090621170668812, guid: b340305c71f334af1b05d51892605743, type: 3}
+  fireShoot: {fileID: 4112964499583223535, guid: d59b39a603c744cdea51e5b333c359c8, type: 3}
 --- !u!212 &71848356304865568
 SpriteRenderer:
   m_ObjectHideFlags: 0
