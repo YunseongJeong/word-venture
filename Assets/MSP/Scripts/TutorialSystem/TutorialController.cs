@@ -31,6 +31,11 @@ namespace TutorialSystem
 
         void Start()
         {
+            if (Map_scene.MapMove.StagePosition > 0)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
             StoryTelling();
             tutorialCondition = new TutorialConditon_002();
         }
