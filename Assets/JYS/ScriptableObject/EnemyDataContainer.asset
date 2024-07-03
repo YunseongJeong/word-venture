@@ -140,4 +140,4 @@ MonoBehaviour:
     moveDistance: 5
     attackRange: 20
     damage: 10
-    type: 3
+    type: 8
