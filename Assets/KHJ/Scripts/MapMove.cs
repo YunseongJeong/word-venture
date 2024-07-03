@@ -177,7 +177,7 @@ namespace Map_scene
 
         void Clear()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && StagePosition <= 4)
+            if (Input.GetKeyDown(KeyCode.C) && StagePosition <= 4)
             {
                 StagePosition++;
             }

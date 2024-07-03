@@ -25,6 +25,8 @@ namespace Deck_Manage {
     public class Card : MonoBehaviour
     {
         [SerializeField] TMP_Text nameTMP;
+        [SerializeField] Sprite MagicCard;
+        [SerializeField] Sprite TypeCard;
 
         public MagicType cardType;
 
@@ -34,6 +36,10 @@ namespace Deck_Manage {
         public void Setup(Word word)
         {
             this.word = word;
+            if (word.tag == "Spell")
+                this.GetComponent<SpriteRenderer>().sprite = MagicCard;
+            else
+                this.GetComponent<SpriteRenderer>().sprite = TypeCard;
             nameTMP.text = this.word.name;
             cardType = this.word.magicType;
             gameObject.tag = this.word.tag;
