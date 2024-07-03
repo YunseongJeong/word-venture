@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 482bcbc2078f16d40bcf5a912904de34
+guid: 98695df8e1963fb48a0837643f2808c2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,11 +49,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 138, y: 142, z: 120, w: 132}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -97,42 +97,38 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_CombineButton_0
+      name: turnendButton_0
       rect:
         serializedVersion: 2
-        x: 136
-        y: 139
-        width: 256
-        height: 236
+        x: 8
+        y: 132
+        width: 496
+        height: 240
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68562a4a6f4dfca448b814abc43e1d09
-      internalID: 1634687200
+      spriteID: 1a8548a254a4af2449508bbf79d3107d
+      internalID: -1629312965
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: -120, y: -114}
-      - {x: -120, y: 120}
-      - {x: 135, y: 120}
-      - {x: 135, y: -114}
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_CombineButton_0: 1634687200
+      turnendButton_0: -1629312965
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
