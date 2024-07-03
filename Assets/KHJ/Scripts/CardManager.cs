@@ -181,33 +181,33 @@ namespace Deck_Manage {
                     break;
                 case 1:
                     wordSO.words[0].percent = 1;
-                    wordSO.words[1].percent = 1;
+                    wordSO.words[1].percent = 0;
                     wordSO.words[2].percent = 1;
-                    wordSO.words[3].percent = 3;
+                    wordSO.words[3].percent = 2;
                     wordSO.words[4].percent = 0;
                     wordSO.words[5].percent = 0;
                     wordSO.words[6].percent = 0;
                     wordSO.words[7].percent = 0;
                     break;
                 case 2:
-                    wordSO.words[0].percent = 2;
-                    wordSO.words[1].percent = 2;
-                    wordSO.words[2].percent = 2;
-                    wordSO.words[3].percent = 3;
-                    wordSO.words[4].percent = 3;
-                    wordSO.words[5].percent = 0;
+                    wordSO.words[0].percent = 1;
+                    wordSO.words[1].percent = 0;
+                    wordSO.words[2].percent = 1;
+                    wordSO.words[3].percent = 1;
+                    wordSO.words[4].percent = 0;
+                    wordSO.words[5].percent = 1;
                     wordSO.words[6].percent = 0;
                     wordSO.words[7].percent = 0;
                     break;
                 case 3:
-                    wordSO.words[0].percent = 4;
-                    wordSO.words[1].percent = 4;
-                    wordSO.words[2].percent = 4;
-                    wordSO.words[3].percent = 3;
-                    wordSO.words[4].percent = 3;
-                    wordSO.words[5].percent = 3;
-                    wordSO.words[6].percent = 3;
-                    wordSO.words[7].percent = 0;
+                    wordSO.words[0].percent = 2;
+                    wordSO.words[1].percent = 0;
+                    wordSO.words[2].percent = 2;
+                    wordSO.words[3].percent = 1;
+                    wordSO.words[4].percent = 1;
+                    wordSO.words[5].percent = 1;
+                    wordSO.words[6].percent = 0;
+                    wordSO.words[7].percent = 1;
                     break;
                 case 4:
                     wordSO.words[0].percent = 5;
