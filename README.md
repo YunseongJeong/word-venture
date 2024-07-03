@@ -1,6 +1,6 @@
 # WordVenture
 
-앱티브 게임 팀 GIGDC 2024 출품작 워드의 모험(WordVenture)(가칭) 제작을 위한 저장소입니다. 여기는 Main!
+**Team 6203**의 GIGDC 2024 출품작 워드의 모험(WordVenture)(가칭) 제작을 위한 저장소입니다. 여기는 Main!
 
 [대회 설명](https://www.gigdc.or.kr/sub01/sub02.php)
 
