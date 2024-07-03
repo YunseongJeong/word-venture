@@ -60,7 +60,7 @@ public class SpellObj : MonoBehaviour
     }
     float speed = 10;
     Vector3 moveVector;
-    int damage = 10;
+    int damage = 10 + 5 * (Map_scene.MapMove.StagePosition / 2);
 
     public void InitProjectileDamage(int damage)
     {
@@ -103,10 +103,10 @@ public class SpellObj : MonoBehaviour
         float result = damage;
         if (spellType == Deck_Manage.MagicType.Drop)
         {
-            result *= 0.7f;
+            result *= 0.8f;
         } else if(spellType == Deck_Manage.MagicType.Summon)
         {
-            result *= 0.5f;
+            result *= 0.67f;
         }
 
         result *= magicAffinityTable.GetAffinity(magicType, enemyMagicType);

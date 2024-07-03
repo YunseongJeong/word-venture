@@ -267,8 +267,15 @@ namespace Deck_Manage {
             }
             else
             {
-                CombineZone.Instance.spellCards.Clear();
-                CombineZone.Instance.magicTypeCards.Clear();
+                if (selectCard.CompareTag("Spell"))
+                {
+                    CombineZone.Instance.spellCards.Clear();
+                }
+                if (selectCard.CompareTag("MagicType"))
+                {
+                    CombineZone.Instance.magicTypeCards.Clear();
+                }
+
                 selectCard.MoveTransform(selectCard.originPRS, false);
             }
         }
