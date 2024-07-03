@@ -23,14 +23,15 @@ public class GameClearController : MonoBehaviour
         sceneName = SceneManager.GetActiveScene().name;
         if (sceneName == "GameClearScene")
         {
+            if (StageDataSingleton.Instance.StagePosition == 4)
+                SceneManager.LoadScene("EndingScene");
             TEXT.SetActive(false);
         }
     }
 
     void Update()
     {
-        if (StageDataSingleton.Instance.StagePosition == 4)
-            SceneManager.LoadScene("EndingScene");
+        
         if (sceneName == "GameClearScene")
         {
             if (Input.anyKeyDown)
