@@ -24,7 +24,7 @@ namespace TutorialSystem
             }
             else
             {
-                Destroy(this);
+                Destroy(gameObject);
             }
             DontDestroyOnLoad(this);
         }
