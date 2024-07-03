@@ -74,7 +74,7 @@ namespace TutorialSystem
             {
                 ProceedTutorial();
             }
-            else if (Time.time > tutorialChatWindow.chatCloseTime && tutorialChatWindow.ChatStatus.Equals(ChatStatus.DEFAULT))
+            if (Time.time > tutorialChatWindow.chatCloseTime && tutorialChatWindow.ChatStatus.Equals(ChatStatus.DEFAULT))
             {
                 tutorialChatWindow.gameObject.SetActive(false);
             }
