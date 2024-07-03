@@ -24,6 +24,7 @@ namespace Enemy
         {
             enemies.Clear();
             GameObject[] temp = GameObject.FindGameObjectsWithTag("Enemy");
+            if (temp == null) return;
             for(int i = 0; i < temp.Length; i++)
             {
                 enemies.Add(temp[i].GetComponent<Enemy>());
@@ -62,6 +63,12 @@ namespace Enemy
                     enemy.TakeHit(1);
                 }
             }
+        }
+
+        //MSP
+        public List<Enemy> GetEnemies()
+        {
+            return enemies;
         }
     }
 }

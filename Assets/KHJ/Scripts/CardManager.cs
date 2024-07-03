@@ -190,34 +190,14 @@ namespace Deck_Manage {
                     wordSO.words[7].percent = 0;
                     break;
                 case 2:
-                    wordSO.words[0].percent = 2;
-                    wordSO.words[1].percent = 2;
-                    wordSO.words[2].percent = 2;
-                    wordSO.words[3].percent = 3;
-                    wordSO.words[4].percent = 3;
-                    wordSO.words[5].percent = 0;
-                    wordSO.words[6].percent = 0;
-                    wordSO.words[7].percent = 0;
+                    wordSO.words[4].percent = 8;
                     break;
                 case 3:
-                    wordSO.words[0].percent = 4;
-                    wordSO.words[1].percent = 4;
-                    wordSO.words[2].percent = 4;
-                    wordSO.words[3].percent = 3;
-                    wordSO.words[4].percent = 3;
-                    wordSO.words[5].percent = 3;
-                    wordSO.words[6].percent = 3;
-                    wordSO.words[7].percent = 0;
+                    wordSO.words[5].percent = 8;
+                    wordSO.words[6].percent = 8;
                     break;
                 case 4:
-                    wordSO.words[0].percent = 5;
-                    wordSO.words[1].percent = 5;
-                    wordSO.words[2].percent = 5;
-                    wordSO.words[3].percent = 3;
-                    wordSO.words[4].percent = 3;
-                    wordSO.words[5].percent = 3;
-                    wordSO.words[6].percent = 3;
-                    wordSO.words[7].percent = 3;
+                    wordSO.words[7].percent = 8;
                     break;
                 default:
                     break;
@@ -267,15 +247,8 @@ namespace Deck_Manage {
             }
             else
             {
-                if (selectCard.CompareTag("Spell"))
-                {
-                    CombineZone.Instance.spellCards.Clear();
-                }
-                if (selectCard.CompareTag("MagicType"))
-                {
-                    CombineZone.Instance.magicTypeCards.Clear();
-                }
-
+                CombineZone.Instance.spellCards.Clear();
+                CombineZone.Instance.magicTypeCards.Clear();
                 selectCard.MoveTransform(selectCard.originPRS, false);
             }
         }
