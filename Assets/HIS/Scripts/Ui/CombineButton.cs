@@ -9,13 +9,13 @@ public class CombineButton : MonoBehaviour
     public GameObject CombineZone;
     public Button activateButton; // 버튼 참조
 
-    void Start()
-    {
-        if (activateButton != null)
-        {
-            activateButton.onClick.AddListener(OnButtonClick);
-        }
-    }
+    //void Start()
+    //{
+    //    if (activateButton != null)
+    //    {
+    //        activateButton.onClick.AddListener(OnButtonClick);
+    //    }
+    //}
 
     // Update is called once per frame
     void Update()
