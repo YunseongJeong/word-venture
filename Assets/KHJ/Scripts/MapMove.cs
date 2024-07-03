@@ -88,7 +88,7 @@ namespace Map_scene
                     position--;
                 }
             }
-            else if (position == 4)
+            else if (position == 4 || position == 5)
             {
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
