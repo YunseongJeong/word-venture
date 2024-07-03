@@ -118,8 +118,7 @@ namespace TutorialSystem
     {
         public bool isMeetCondition()
         {
-            return TutorialController.Instance.IsFlagEqual(TutorialFlag.FLAG_008_CAST_SPELL) 
-                && Input.anyKeyDown;
+            return TutorialController.Instance.IsFlagEqual(TutorialFlag.FLAG_008_CAST_SPELL);
         }
 
         public ITutorialCondition GetNextCondition()
