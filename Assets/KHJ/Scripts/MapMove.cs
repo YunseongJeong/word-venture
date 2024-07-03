@@ -40,7 +40,6 @@ namespace Map_scene
 
         void CharacterMove()
         {
-            print(position);
             if (position == 0)
             {
                 if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow)) && StagePosition >= 1)
