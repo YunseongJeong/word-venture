@@ -58,9 +58,12 @@ namespace Enemy{
                 Death();
                 return;
             }
-            else
+            else if (damage > 0)
             {
                 animator.SetTrigger("GetHit");
+                UpdateIndicator();
+            } else
+            {
                 UpdateIndicator();
             }
 
