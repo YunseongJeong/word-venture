@@ -24,6 +24,7 @@ namespace TutorialSystem
     {
         public static float CHAT_CLOSE_TIME = 5f;
         public static float CHAT_REMAIN_TIME = 3f;
+        public static float TUTORIAL_TEXT_TIME = 0.03f;
     }
 
     public enum TutorialFlag
@@ -84,7 +85,7 @@ namespace TutorialSystem
 
             for (int i = 0; i < text.Length; i++)
             {
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(Constant.TUTORIAL_TEXT_TIME);
                 descriptText.SetText(text.Substring(0, i));
             }
 
