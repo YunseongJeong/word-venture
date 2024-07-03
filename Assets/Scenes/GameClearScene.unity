@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordSO: {fileID: 11400000, guid: 1db3b93d2265b824b82ed06990a91a6b, type: 2}
-  spellCard: {fileID: 7282847734515516324, guid: aa24d40b8e8ae2444a8fcb9412788937, type: 3}
-  magicCard: {fileID: 7282847734515516324, guid: aa24d40b8e8ae2444a8fcb9412788937, type: 3}
+  spellCard: {fileID: 5109315862192497862, guid: 7a22394f5f6edde41b4b57557ed34e27, type: 3}
+  magicCard: {fileID: 2899280244749793896, guid: 375d677d800d03046ac843ec9b4bf689, type: 3}
   TEXT: {fileID: 682500690}
 --- !u!95 &85088228
 Animator:
