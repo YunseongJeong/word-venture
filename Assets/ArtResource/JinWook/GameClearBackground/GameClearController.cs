@@ -29,6 +29,8 @@ public class GameClearController : MonoBehaviour
 
     void Update()
     {
+        if (Map_scene.MapMove.StagePosition == 5)
+            SceneManager.LoadScene("EndingScene");
         if (sceneName == "GameClearScene")
         {
             if (Input.anyKeyDown)

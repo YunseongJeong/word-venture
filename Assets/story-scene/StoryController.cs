@@ -69,6 +69,9 @@ public class StoryController : MonoBehaviour
 
     private void LoadMapScene()
     {
-        SceneManager.LoadScene("Map_scene");
+        if (Map_scene.MapMove.StagePosition == 5)
+            SceneManager.LoadScene("EndingScene");
+        else
+            SceneManager.LoadScene("Map_scene");
     }
 }
