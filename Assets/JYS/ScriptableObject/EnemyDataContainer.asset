@@ -136,7 +136,7 @@ MonoBehaviour:
   - id: 15
     name: SlimeKing2
     prefab: {fileID: 962535333444052846, guid: d509850d593594349a35232db741e118, type: 3}
-    maxHp: 40
+    maxHp: 80
     moveDistance: 5
     attackRange: 20
     damage: 10
