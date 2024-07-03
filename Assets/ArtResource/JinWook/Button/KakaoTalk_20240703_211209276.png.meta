@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a8ed563ae12d1a147a445541e9a5c483
+guid: 386b373fcecbf4129aa1158637414dbd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_Start_Button_0
+      name: KakaoTalk_20240703_211209276_0
       rect:
         serializedVersion: 2
         x: 16
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d020d7db862bc463b88a42921a67792d
-      internalID: 1110995503
+      spriteID: 7c1900e52312f4e7c99768d77a042fd4
+      internalID: -1393535022
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Start_Button_0: 1110995503
+      KakaoTalk_20240703_211209276_0: -1393535022
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

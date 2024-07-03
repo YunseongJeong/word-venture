@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 public class TitleSceneManager : MonoBehaviour
 {
     SaveLoadController saveLoadController;
-
+    [SerializeField] GameObject continueButton;
 
     private void Start()
     {
         saveLoadController = GameObject.Find("SaveLoadController").GetComponent<SaveLoadController>();
+        if (saveLoadController.LoadPlayData() == -1)
+        {
+            continueButton.SetActive(false);
+        }
     }
+
 
     public void LoadStoryScene()
     {
@@ -32,6 +37,7 @@ public class TitleSceneManager : MonoBehaviour
     public void InitPlayerData()
     {
         SaveLoadController.Instance.InitPlayData();
+        LoadStoryScene();
     }
 
 
