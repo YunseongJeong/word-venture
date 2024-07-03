@@ -40,6 +40,7 @@ namespace Map_scene
 
         void CharacterMove()
         {
+            print(position);
             if (position == 0)
             {
                 if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow)) && StagePosition >= 1)
@@ -149,21 +150,25 @@ namespace Map_scene
 
         void WordPosition(int StagePosition)
         {
+            position = StagePosition;
             switch (StagePosition)
             {
-                case 1:
+                case 0:
                     break;
-                case 2:
+                case 1:
                     character.transform.position = battle1.transform.position;
                     break;
-                case 3:
+                case 2:
                     character.transform.position = battle2.transform.position;
                     break;
-                case 4:
+                case 3:
                     character.transform.position = battle3.transform.position;
                     break;
+                case 4:
+                    character.transform.position = boss.transform.position;
+                    break;
                 case 5:
-                    character.transform.position = battle3.transform.position;
+                    character.transform.position = boss.transform.position;
                     break;
                 default:
                     break;
@@ -172,7 +177,7 @@ namespace Map_scene
 
         void Clear()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && StagePosition <= 5)
+            if (Input.GetKeyDown(KeyCode.Space) && StagePosition <= 4)
             {
                 StagePosition++;
             }
