@@ -64,7 +64,7 @@ public class GameClearController : MonoBehaviour
         print(StageDataSingleton.Instance.StagePosition);
         if (Map_scene.MapMove.StagePosition - 1 == StageDataSingleton.Instance.StagePosition)
         {
-            switch (Map_scene.MapMove.StagePosition - 1)
+            switch (StageDataSingleton.Instance.StagePosition)
             {
                 case 0: // summon, Drop 1, 2
                     GameObject card1 = Instantiate(spellCard, new Vector3(-2, 0, 0), Quaternion.identity);
