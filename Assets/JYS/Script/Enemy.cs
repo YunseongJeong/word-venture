@@ -179,7 +179,7 @@ namespace Enemy
             
         }
 
-        protected void StopMove()
+        protected virtual void StopMove()
         {
             animator.MoveEnd();
         }

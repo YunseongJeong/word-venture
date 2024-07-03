@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2245977759722176293}
+  - component: {fileID: -4455703359542515968}
   - component: {fileID: 4379358717741273580}
-  - component: {fileID: 5733809948769061060}
   - component: {fileID: 9037034526982960309}
   - component: {fileID: 8693611652948779844}
   - component: {fileID: 7464222909268072619}
@@ -38,6 +38,23 @@ Transform:
   - {fileID: 5902315226077117346}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4455703359542515968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962535333444052846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6236bcb16d6bf4f009ed4345e068492e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 0
+  id: 0
+  moveDistance: 5
+  attackRange: 3
+  fireShoot: {fileID: 551846140306559048, guid: 737d38e54a152473997472dfcf72b0d3, type: 3}
 --- !u!212 &4379358717741273580
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -90,23 +107,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5733809948769061060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962535333444052846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4156a9bbefd7c4871ab212914637632e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyType: 0
-  id: 0
-  moveDistance: 5
-  attackRange: 3
-  fireShoot: {fileID: 2084694718729448266, guid: 07417b916a4434c3e824974d43979296, type: 3}
 --- !u!114 &9037034526982960309
 MonoBehaviour:
   m_ObjectHideFlags: 0
