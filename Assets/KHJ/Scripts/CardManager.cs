@@ -250,12 +250,12 @@ namespace Deck_Manage {
         public void CardMouseUp()
         {
             isMyCardDrag = false;
-            if (onPushArea1 && selectCard.CompareTag("Spell"))
+            if (onPushArea1 && selectCard.CompareTag("Spell") && CombineZone.Instance.spellCards.Count == 0)
             {
                 PushArea1.GetComponent<DropZone>().GetCard(selectCard.gameObject);
                 selectCard.MoveTransform(new PRS(PushArea1.transform.position, Util.QI, selectCard.originPRS.scale), false);
             }
-            else if (onPushArea2 && selectCard.CompareTag("MagicType"))
+            else if (onPushArea2 && selectCard.CompareTag("MagicType") && CombineZone.Instance.magicTypeCards.Count == 0)
             {
                 PushArea2.GetComponent<DropZone>().GetCard(selectCard.gameObject);
                 selectCard.MoveTransform(new PRS(PushArea2.transform.position, Util.QI, selectCard.originPRS.scale), false);
