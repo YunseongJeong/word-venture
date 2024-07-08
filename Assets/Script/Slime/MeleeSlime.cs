@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class SwordEnemy : Enemy
+    public class MeleeSlime : Enemy
     {
 
         void Start()

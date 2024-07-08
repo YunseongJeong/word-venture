@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class BossEnemy : Enemy
+    public class BossSlime : Enemy
     {
         [SerializeField] GameObject fireShoot;
 

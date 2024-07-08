@@ -277,7 +277,7 @@ MonoBehaviour:
   id: 0
   moveDistance: 5
   attackRange: 3
-  fireShoot: {fileID: 5670726218197079227, guid: 18876f5fb046846eabae134ddd941dac, type: 3}
+  projectile: {fileID: 2296115400492960700, guid: 5529f38611e9b42e3b6bb6a7c3f0c1ad, type: 3}
 --- !u!50 &8544293789975887567
 Rigidbody2D:
   serializedVersion: 4
