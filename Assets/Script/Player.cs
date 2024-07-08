@@ -1,142 +1,80 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enemy;
+using TMPro;
 using UnityEngine;
-using TurnBattle;
+using UnityEngine.SceneManagement;
 
-namespace BattleSystem
-{
+namespace Enemy{
     public class Player : MonoBehaviour
     {
-        private TurnBattleSystem battleSystem;
-        private int health = 100;
+        Animator animator;
 
-        public Enemy enemy;
-        public GameObject fireballPrefab;
-        public GameObject iceballPrefab;
-        public GameObject rockballPrefab;
-        public GameObject lightningballPrefab;
-        public Transform firePoint;
-
-        public enum MagicType
+        public static Player PlayerInt()
         {
-            Shoot,
-            Heal,
-            Summon,
-            Drop,
-            Fire,
-            Ice,
-            Rock,
-            Lightning,
-            Enemy,
-            Ally,
-            Me
+            return instance;
         }
 
-        void Update()
+        static Player instance;
+
+        protected TMP_Text hpText;
+
+        protected int hp = 100;
+        protected int maxHp = 100;
+        protected int damage;
+
+        public int shield = 0;
+
+        public void UpdateIndicator()
         {
-            if (Input.GetKeyDown(KeyCode.A)) //shoot fire
-            {
-                ShootFireball();
-            }
-
-            if (Input.GetKeyDown(KeyCode.S)) //shoot ice
-            {
-                ShootIceball();
-            }
-
-            if (Input.GetKeyDown(KeyCode.D)) // shoot rock
-            {
-                ShootRockball();
-            }
-
-            if (Input.GetKeyDown(KeyCode.F)) // shoot lightning
-            {
-                ShootLightningball();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Q)) //fire heal
-            {
-                IncreaseHealth(10);
-            }
-
-            if (Input.GetKeyDown(KeyCode.W)) //Ice heal
-            {
-                IncreaseHealth(20);
-            }
-
-            if (Input.GetKeyDown(KeyCode.E)) //Rock heal
-            {
-                IncreaseHealth(30);
-            }
-
-            if (Input.GetKeyDown(KeyCode.R)) //Lightning heal
-            {
-                IncreaseHealth(40);
-            }
+            hpText.SetText(hp.ToString());
         }
 
-        void AttackEnemy(int damage)
+        private void Awake()
         {
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
-            else
-            {
-                Debug.LogWarning("Enemy reference is not set in the Player script.");
-            }
+            InitIndicators();
+            animator = GetComponent<Animator>();
+            instance = this;
         }
 
-        void ShootFireball()
+        public void AttackAnima()
         {
-            GameObject fireball = Instantiate(fireballPrefab, firePoint.position, firePoint.rotation);
-
-            Rigidbody rb = fireball.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.velocity = firePoint.forward * fireball.GetComponent<Fireball>().speed;
-            }
+            animator.SetTrigger("Attack");
         }
 
-        void ShootIceball()
-        {
-            GameObject iceball = Instantiate(iceballPrefab, firePoint.position, firePoint.rotation);
 
-            Rigidbody2D rb = iceball.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.velocity = firePoint.right * iceball.GetComponent<Iceball>().speed;
-            }
+        protected void Death()
+        {
+            animator.SetTrigger("Death");
+            //gameObject.SetActive(false);
+            SceneManager.LoadScene("GameOverScene");
         }
 
-        void ShootRockball()
+        public void TakeHit(int damage)
         {
-            GameObject rockball = Instantiate(rockballPrefab, firePoint.position, firePoint.rotation);
-
-            Rigidbody2D rb = rockball.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            hp -= damage;
+            if (hp <= 0)
             {
-                rb.velocity = firePoint.right * rockball.GetComponent<Rockball>().speed;
+                Death();
+                return;
             }
+            else if (damage > 0)
+            {
+                animator.SetTrigger("GetHit");
+                UpdateIndicator();
+            } else
+            {
+                UpdateIndicator();
+            }
+
         }
 
-        void ShootLightningball()
+        private void InitIndicators()
         {
-            GameObject lightningball = Instantiate(lightningballPrefab, firePoint.position, firePoint.rotation);
+            hpText = gameObject.GetComponentInChildren<TMP_Text>();
 
-            Rigidbody2D rb = lightningball.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.velocity = firePoint.right * lightningball.GetComponent<Lightningball>().speed;
-            }
-        }
-
-        void IncreaseHealth(int amount)
-        {
-            health += amount;
-            Debug.Log("Player's health increased by " + amount + ". Current health: " + health);
+            hpText.SetText(maxHp.ToString());
         }
     }
 }
-
 
