@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3939901351343502005}
+  - component: {fileID: 8311418744296789576}
   - component: {fileID: 8448773804581728345}
   - component: {fileID: 6733525095389050087}
   - component: {fileID: 8212990623494487019}
-  - component: {fileID: 4745533799577669756}
   - component: {fileID: 9112749986356858481}
   m_Layer: 0
   m_Name: IceShoot
@@ -36,6 +36,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8311418744296789576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6284315148270315971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a5e1983a13e42158388d117017fcfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &8448773804581728345
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -150,18 +162,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4745533799577669756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6284315148270315971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca1f85c0931c2642901be5e74c112e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &9112749986356858481
 Animator:
   serializedVersion: 5
