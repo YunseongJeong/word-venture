@@ -16,49 +16,29 @@ public class GameClearController : MonoBehaviour
 
     bool flag = false;
 
-    private string sceneName;
-
     private void Start()
     {
-        sceneName = SceneManager.GetActiveScene().name;
-        if (sceneName == "GameClearScene")
-        {
-            if (StageDataSingleton.Instance.StagePosition == 4)
-                SceneManager.LoadScene("EndingScene");
-            TEXT.SetActive(false);
-        }
+        if (StageDataSingleton.Instance.StagePosition == 4)
+            SceneManager.LoadScene("EndingScene");
+        TEXT.SetActive(false);
     }
 
     void Update()
     {
-        
-        if (sceneName == "GameClearScene")
+        if (Input.anyKeyDown)
         {
-            if (Input.anyKeyDown)
+            if (!flag)
             {
-                if (!flag)
-                {
-                    TEXT.SetActive(true);
-                    ShowGettedCard();
-                    flag = true;
-                }
-                else
-                {
-                    SceneManager.LoadScene("Map_scene");
-                }
-
+                TEXT.SetActive(true);
+                ShowGettedCard();
+                flag = true;
             }
-        } else
-        {
-            if (Input.anyKeyDown)
+            else
             {
-
                 SceneManager.LoadScene("Map_scene");
-
             }
-        }
 
-        
+        }
     }
 
     void ShowGettedCard()
