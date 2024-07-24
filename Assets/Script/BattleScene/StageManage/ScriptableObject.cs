@@ -14,5 +14,5 @@ public class StageData : ScriptableObject
 [System.Serializable]
 public class WaveData
 {
-    public BattleScriptContainer[] enemyWaves;
+    public BattleWaveContainer[] enemyWaves;
 }
