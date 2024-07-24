@@ -7,8 +7,8 @@ namespace Enemy
     public class RangedEnemy : Enemy
     {
         [SerializeField] GameObject projectile;
-        
-        void Start()
+
+        protected override void Start()
         {
             base.Start();
         }

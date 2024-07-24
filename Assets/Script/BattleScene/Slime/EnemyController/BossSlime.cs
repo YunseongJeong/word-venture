@@ -8,7 +8,7 @@ namespace Enemy
     {
         [SerializeField] GameObject fireShoot;
 
-        void Start()
+        protected override void Start()
         {
             base.Start();
         }

@@ -8,7 +8,7 @@ namespace Enemy
     public class MeleeSlime : Enemy
     {
 
-        void Start()
+        protected override void Start()
         {
             base.Start();
         }
