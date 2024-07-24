@@ -19,7 +19,7 @@ public struct EnemySpawnData{
 
 
 [CreateAssetMenu]
-public class BattleScriptContainer : ScriptableObject
+public class BattleWaveContainer : ScriptableObject
 {
     [SerializeField] List<BattleWaveData> battleWaveDatas;
 
