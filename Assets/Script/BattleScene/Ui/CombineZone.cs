@@ -36,8 +36,6 @@ public class CombineZone : MonoBehaviour
         }
     }
 
-    [SerializeField] MagicAAffinity.MagicAffinityTable magicAffinityTable;
-
     public Button activateButton;
     public GameObject Shoot;
     public GameObject Drop;
@@ -76,7 +74,7 @@ public class CombineZone : MonoBehaviour
         {
             magicTypeCards.Add(card);
         }
-        if (spellCards.Count == 1 && magicTypeCards.Count == 1) // && targetCards.Count == 1)
+        if (spellCards.Count == 1 && magicTypeCards.Count == 1)
         {
             activateButton.gameObject.SetActive(true);
             activateButton.onClick.RemoveAllListeners();
@@ -88,12 +86,13 @@ public class CombineZone : MonoBehaviour
 
     public async void OnButtonClick()
     {
-        if (spellCards.Count == 1 && magicTypeCards.Count == 1)// && targetCards.Count == 1)
+        if (spellCards.Count == 1 && magicTypeCards.Count == 1)
         {
             StartCoroutine(CastSpell());
         }
         ClearDropZone();
     }
+
     IEnumerator CastSpell()
     {
         InitSelectableObjectList();
@@ -112,15 +111,15 @@ public class CombineZone : MonoBehaviour
         if (spellType == Deck_Manage.MagicType.Shoot)
         {
 
-            Shoot.GetComponent<Shoot>().shoot(magicType, target, magicAffinityTable);
+            Shoot.GetComponent<Shoot>().shoot(magicType, target);
         }
         else if (spellType == Deck_Manage.MagicType.Drop)
         {
-            Drop.GetComponent<Drop>().drop(magicType, target, magicAffinityTable);
+            Drop.GetComponent<Drop>().drop(magicType, target);
         }
         else if (spellType == Deck_Manage.MagicType.Summon)
         {
-            Summon.GetComponent<Summon>().summon(magicType, target, magicAffinityTable);
+            Summon.GetComponent<Summon>().summon(magicType, target);
         }
         SetAllSelectable(false);
         
