@@ -11,12 +11,12 @@ public class Shoot : MonoBehaviour
     public GameObject ShootlightningPrefab;
     public GameObject ShootHolyPrefab;
 
-    public void shoot(MagicType magicType1, SelectableObject target, MagicAAffinity.MagicAffinityTable magicAffinityTable)
+    public void shoot(MagicType magicType, SelectableObject target)
     {
 
         GameObject prefabToInstantiate = null;
 
-        switch (magicType1)
+        switch (magicType)
         {
             case MagicType.Fire:
                 prefabToInstantiate = ShootfirePrefab;
@@ -39,7 +39,7 @@ public class Shoot : MonoBehaviour
         {
             GameObject obj = Instantiate(prefabToInstantiate, Enemy.Player.PlayerInt().transform.position, prefabToInstantiate.transform.rotation);
             
-            obj.GetComponent<SpellObj>().InitSpell(MagicType.Shoot, magicType1, target, magicAffinityTable);
+            obj.GetComponent<SpellObject>().InitSpell(MagicType.Shoot, magicType, target);
         }
     }    
 }
