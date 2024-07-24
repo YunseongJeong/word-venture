@@ -5,7 +5,7 @@ using Deck_Manage;
 using Enemy;
 using System;
 
-namespace MagicAAffinity
+namespace MagicAffinity
 {
 
     [Serializable]
@@ -24,8 +24,6 @@ namespace MagicAAffinity
     [CreateAssetMenu]
     public class MagicAffinityTable : ScriptableObject
     {
-        //[SerializeField] Dictionary<MagicType ,Dictionary<MagicType, float>> table = new Dictionary<MagicType, Dictionary<MagicType, float>>();
-        //[SerializeField] List<List<float>> table = new List<List<float>>();
         [SerializeField]
         private Table table = new Table();
 
